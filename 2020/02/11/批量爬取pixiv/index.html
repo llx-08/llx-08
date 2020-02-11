@@ -11,15 +11,15 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="昨天跑的时候完全没有问题，今天重新跑居然出了一堆bug，重新写了一下，有的bug实在是懒得调，所以现在就变成了一个伪爬虫，需要手动将url放入迅雷。毕竟是第一个爬虫，后面再完善吧。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253from selen">
+  <meta name="description" content="这个是标题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量爬取pixiv">
 <meta property="og:url" content="http://llx-08.github.io/2020/02/11/%E6%89%B9%E9%87%8F%E7%88%AC%E5%8F%96pixiv/index.html">
 <meta property="og:site_name" content="LLXNB">
-<meta property="og:description" content="昨天跑的时候完全没有问题，今天重新跑居然出了一堆bug，重新写了一下，有的bug实在是懒得调，所以现在就变成了一个伪爬虫，需要手动将url放入迅雷。毕竟是第一个爬虫，后面再完善吧。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253from selen">
+<meta property="og:description" content="这个是标题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-11T05:07:00.000Z">
-<meta property="article:modified_time" content="2020-02-11T05:12:45.180Z">
+<meta property="article:modified_time" content="2020-02-11T05:20:23.527Z">
 <meta property="article:author" content="llxnb">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1581397980555">
+  <link rel="stylesheet" href="/css/style.css?v=1581398467955">
 
    
     <style>
@@ -165,7 +165,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>266 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>271 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
     
     
@@ -176,14 +176,14 @@
     
       <div id="toc" class="toc-article">
           <ul class="markdownIt-TOC">
-              
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#这个是标题"><span class="toc-text">这个是标题</span></a></li></ol>
           </ul>
       </div>
     
   </div>
 
   <article>
-    <a id="more"></a>
+    <h1 id="这个是标题"><a href="#这个是标题" class="headerlink" title="这个是标题"></a>这个是标题</h1><a id="more"></a>
 
 <p>昨天跑的时候完全没有问题，今天重新跑居然出了一堆bug，重新写了一下，有的bug实在是懒得调，所以现在就变成了一个伪爬虫，需要手动将url放入迅雷。毕竟是第一个爬虫，后面再完善吧。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">chrome_options = webdriver.ChromeOptions()</span><br><span class="line">chrome_options.binary_location = <span class="string">r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'</span></span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome(chrome_options=chrome_options)</span><br><span class="line">thunder_path = <span class="string">'D:/Thunder/Program/Thunder.exe'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Url2Thunder</span><span class="params">(url)</span>:</span></span><br><span class="line">    url = <span class="string">'AA'</span> + url + <span class="string">'ZZ'</span></span><br><span class="line">    url = base64.b64encode(url.encode(<span class="string">'ascii'</span>))</span><br><span class="line">    url = <span class="string">b'thunder://'</span> + url</span><br><span class="line">    thunder_url = url.decode()</span><br><span class="line">    <span class="keyword">return</span> thunder_url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_with_thunder</span><span class="params">(file_url)</span>:</span></span><br><span class="line">    subprocess.call([thunder_path, file_url])</span><br><span class="line"></span><br><span class="line">idurl = input(<span class="string">"请输入作者id："</span>)</span><br><span class="line">img_url = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">7</span>):</span><br><span class="line">    driver.get(<span class="string">"https://www.pixiv.net/member_illust.php?id="</span> + idurl + <span class="string">"&amp;p=%d"</span> % i)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="comment">#print(driver.page_source)</span></span><br><span class="line">    page = driver.page_source</span><br><span class="line">    dom = etree.HTML(page)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    ids = dom.xpath(<span class="string">'//img[contains(@src,"")]/@src'</span>)</span><br><span class="line">    <span class="comment">#print(ids)</span></span><br><span class="line"><span class="keyword">for</span> id <span class="keyword">in</span> ids:</span><br><span class="line">    <span class="comment"># print(id)</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'250x250'</span> <span class="keyword">in</span> id) == <span class="literal">True</span>:</span><br><span class="line">        date_id = id.strip(<span class="string">'https://i.pximg.net/c/250x250_80_a2/'</span>)</span><br><span class="line">        date_id = date_id.strip(<span class="string">'square1200.jpg'</span>)</span><br><span class="line">        <span class="comment"># print(date_id)</span></span><br><span class="line">        img_url_temp = <span class="string">'https://i.pximg.net/img'</span> + date_id + <span class="string">'master1200.jpg'</span></span><br><span class="line">        turl = Url2Thunder(img_url_temp)</span><br><span class="line">        img_url.append(turl)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> img_url:</span><br><span class="line">    <span class="comment"># download_with_thunder(img_url)  # 直接request.get的话会403</span></span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    print(i)</span><br><span class="line">img_url = []</span><br><span class="line">print(<span class="string">"一页完成"</span>)</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
@@ -233,7 +233,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1581397980556"></script>
+<script src="/js/app.js?v=1581398467957"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
