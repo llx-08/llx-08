@@ -19,7 +19,7 @@
 <meta property="og:description" content="笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-11T13:12:24.000Z">
-<meta property="article:modified_time" content="2020-02-14T05:08:38.608Z">
+<meta property="article:modified_time" content="2020-02-11T13:12:24.000Z">
 <meta property="article:author" content="llxnb">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582384069328">
+  <link rel="stylesheet" href="/css/style.css?v=1582886548305">
 
    
     <style>
@@ -65,8 +65,8 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>12</div>
-        <div><span>标签</span>5</div>
+        <div><span>文章</span>11</div>
+        <div><span>标签</span>4</div>
         <div><span>分类</span>0</div>
     </div>
     <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -130,7 +130,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%89%93%E5%8D%A1/" style="font-size: 10px;">打卡</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -165,7 +165,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>156 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>151 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
     
     
@@ -187,8 +187,14 @@
 
 <p>Rules：（In Rule Edition）</p>
 <p>eg: shallow autonomoly</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Agt_Init&#123;</span><br><span class="line">my.X &#x3D; 25</span><br><span class="line">my.Y &#x3D; 25</span><br><span class="line">my.Direction &#x3D; Rnd() * 360</span><br><span class="line">&#125;</span><br><span class="line">Agt_Step&#123;</span><br><span class="line">Forward(1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="artisoc">Agt_Init{
+my.X = 25
+my.Y = 25
+my.Direction = Rnd() * 360
+}
+Agt_Step{
+Forward(1)
+}</code></pre>
 <p>Rnd( )  : function that generates a uniform random number greater than or equal to zero and less than one</p>
 <p>Forward( ) : makes the agent move forward by the numeric value in parentheses in its direction each simulation step.</p>
 <p> GetCountStep( ): indicates the step count after artisoc starts running a simulation</p>
@@ -210,20 +216,36 @@
 
   
   <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
 <script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        id: window.location.pathname,
-        repo: 'llx-08.github.io',
-        owner: 'llx-08',
-        admin: 'llx-08'
-    })
-    gitalk.render('gitalk')
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
 </script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+
+
+
+
+
+
+
+
 </section>
 </div>
     </div>
@@ -241,7 +263,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582384069329"></script>
+<script src="/js/app.js?v=1582886548306"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

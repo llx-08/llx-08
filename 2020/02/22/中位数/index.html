@@ -19,7 +19,7 @@
 <meta property="og:description" content="oj">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-22T09:32:26.000Z">
-<meta property="article:modified_time" content="2020-02-22T15:06:45.163Z">
+<meta property="article:modified_time" content="2020-02-22T09:32:26.000Z">
 <meta property="article:author" content="llxnb">
 <meta property="article:tag" content="oj">
 <meta name="twitter:card" content="summary">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582384069324">
+  <link rel="stylesheet" href="/css/style.css?v=1582886548302">
 
    
     <style>
@@ -66,8 +66,8 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>12</div>
-        <div><span>标签</span>5</div>
+        <div><span>文章</span>11</div>
+        <div><span>标签</span>4</div>
         <div><span>分类</span>0</div>
     </div>
     <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -131,7 +131,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%89%93%E5%8D%A1/" style="font-size: 10px;">打卡</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -166,7 +166,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>429 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>415 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
     
@@ -196,17 +196,58 @@
 <p>第一行两个整数 <em>n</em>,<em>k</em>(1≤<em>n</em>≤2×105,1≤<em>k</em>≤109)。</p>
 <p>第二行 <em>n</em> 和整数 <em>a</em>1,<em>a</em>2,……,<em>a*</em>n*。</p>
 <h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p><em>k</em> 次操作后数组的中位数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br><span class="line">1 3 5</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure>
-
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><pre><code class="in">3 2
+1 3 5</code></pre>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><pre><code class="out">5</code></pre>
 <p>数学学得不好，想了好久好久好久啊。</p>
 <p>把输入的数组排个序，然后从中间开始，对每个元素和他下一个位置的元素求两者之间相差多少并存入数组。</p>
 <p>然后每一层就像mc里堆方块上楼一样，先把当前层到下一层填平，然后再把当前层和下一层到下下层填平…以此类推。</p>
 <p>填不满的就看能让现在所有的上升多少。</p>
 <p>其实我还没太懂怎么证明这种方法是对的，反正过了，tmd</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[maxn],b[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;=n;x++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[x];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> z=(n+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x=z;x&lt;n;x++)</span><br><span class="line">        &#123;</span><br><span class="line">            b[x+<span class="number">1</span>]=a[x+<span class="number">1</span>]-a[x];<span class="comment">//b数组存储与前一个的差值</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=a[z],w=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(k-b[z+w]*w&gt;=<span class="number">0</span> <span class="keyword">and</span> z+w&lt;=n)</span><br><span class="line">            &#123;</span><br><span class="line">                k-=b[z+w]*w;</span><br><span class="line">                <span class="comment">//cout&lt;&lt;k&lt;&lt;endl;</span></span><br><span class="line">                ans=a[z+w];</span><br><span class="line">                w++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                ans+=k/w;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn=1000000;
 
+long long a[maxn],b[maxn];
+int main()
+{
+    int n,k;
+
+    while(cin&gt;&gt;n&gt;&gt;k)
+    {
+        for(int x=1;x&lt;=n;x++)
+        {
+            cin&gt;&gt;a[x];
+        }
+
+        sort(a+1,a+n+1);
+        long long z=(n+1)/2;
+
+        for(int x=z;x&lt;n;x++)
+        {
+            b[x+1]=a[x+1]-a[x];//b数组存储与前一个的差值
+        }
+
+        long long ans=a[z],w=1;
+
+        while(k&gt;0)
+        {
+            if(k-b[z+w]*w&gt;=0 and z+w&lt;=n)
+            {
+                k-=b[z+w]*w;
+                //cout&lt;&lt;k&lt;&lt;endl;
+                ans=a[z+w];
+                w++;
+            }
+            else
+            {
+                ans+=k/w;
+                break;
+            }
+        }
+        cout&lt;&lt;ans&lt;&lt;endl;
+    }
+}</code></pre>
 
   </article>
   
@@ -223,20 +264,36 @@
 
   
   <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
 <script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        id: window.location.pathname,
-        repo: 'llx-08.github.io',
-        owner: 'llx-08',
-        admin: 'llx-08'
-    })
-    gitalk.render('gitalk')
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
 </script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+
+
+
+
+
+
+
+
 </section>
 </div>
     </div>
@@ -254,7 +311,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582384069326"></script>
+<script src="/js/app.js?v=1582886548303"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

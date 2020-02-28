@@ -20,7 +20,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://llx-08.github.io/img/b_robotstxt.png">
 <meta property="article:published_time" content="2020-02-08T08:45:39.000Z">
-<meta property="article:modified_time" content="2020-02-10T11:16:50.933Z">
+<meta property="article:modified_time" content="2020-02-08T08:45:39.000Z">
 <meta property="article:author" content="llxnb">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582384069333">
+  <link rel="stylesheet" href="/css/style.css?v=1582886548310">
 
    
     <style>
@@ -68,8 +68,8 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>12</div>
-        <div><span>标签</span>5</div>
+        <div><span>文章</span>11</div>
+        <div><span>标签</span>4</div>
         <div><span>分类</span>0</div>
     </div>
     <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -133,7 +133,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%89%93%E5%8D%A1/" style="font-size: 10px;">打卡</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -168,7 +168,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
-    <a><i class="nexmoefont icon-areachart"></i>854 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>864 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
     
@@ -201,16 +201,22 @@
 <p>我一开始学的时候就特别想爬b站，然后每次都是403forbidden，严重的打击了我的学习热情（x</p>
 <hr>
 <h3 id="REQUESTS"><a href="#REQUESTS" class="headerlink" title="REQUESTS"></a>REQUESTS</h3><p>requests库，没装的用pip install requests装一下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = input(<span class="string">"输入需要爬取的网址："</span>)</span><br><span class="line">resp = requests.get(url)</span><br><span class="line">print(resp)</span><br><span class="line">print(resp.text)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">import requests
+url = input(&quot;输入需要爬取的网址：&quot;)
+resp = requests.get(url)
+print(resp)
+print(resp.text)</code></pre>
 <p>如果你的网络没有问题的话，并且爬取的网站没有反爬机制的话，那么首先print出来的应该是&lt;Response [200]&gt;</p>
 <p>好像只要方括号里面的是2开头的就都没有问题，3开头或者是4开头的就没有获取到页面了。</p>
 <p>然后下面print的是网页的html代码，其实这就是完成了一个简单的爬虫。</p>
 <hr>
 <h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><p>这个库还蛮厉害的，可以让爬出来的东西显示的更简洁。</p>
 <p>首先要做的就是调库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(html, <span class="string">'lxml'</span>) <span class="comment">#html是获取的网页代码？不知道怎么形容</span></span><br><span class="line"><span class="comment">#反正比较主流的要么是urllib.urlopen('url').text，要么是requests.get('url').text</span></span><br><span class="line"><span class="comment">#lxml是解释器，也可以是html.parser等等</span></span><br><span class="line"><span class="comment">#这里的soup就是一个BeautifulSoup对象，可以调用下面的函数更清晰的认识网页</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">from bs4 import BeautifulSoup
+soup = BeautifulSoup(html, &#39;lxml&#39;) #html是获取的网页代码？不知道怎么形容
+#反正比较主流的要么是urllib.urlopen(&#39;url&#39;).text，要么是requests.get(&#39;url&#39;).text
+#lxml是解释器，也可以是html.parser等等
+#这里的soup就是一个BeautifulSoup对象，可以调用下面的函数更清晰的认识网页</code></pre>
 <p>常用的函数:</p>
 <p>prittify( ):将网页的html代码按照标准的缩进格式输出</p>
 <p>find()：找到第一个符合查找要求的，参数和下面的函数一样</p>
@@ -234,20 +240,36 @@
 
   
   <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
 <script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        id: window.location.pathname,
-        repo: 'llx-08.github.io',
-        owner: 'llx-08',
-        admin: 'llx-08'
-    })
-    gitalk.render('gitalk')
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
 </script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+
+
+
+
+
+
+
+
 </section>
 </div>
     </div>
@@ -265,7 +287,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582384069334"></script>
+<script src="/js/app.js?v=1582886548312"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
