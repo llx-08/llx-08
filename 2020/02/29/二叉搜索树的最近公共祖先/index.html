@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>artisoc - LLXNB</title>
+  <title>二叉搜索树的最近公共祖先 - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,16 +11,17 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="笔记">
+  <meta name="description" content="oj">
 <meta property="og:type" content="article">
-<meta property="og:title" content="artisoc">
-<meta property="og:url" content="http://llx-08.github.io/2020/02/11/artisoc/index.html">
+<meta property="og:title" content="二叉搜索树的最近公共祖先">
+<meta property="og:url" content="http://llx-08.github.io/2020/02/29/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/index.html">
 <meta property="og:site_name" content="LLXNB">
-<meta property="og:description" content="笔记">
+<meta property="og:description" content="oj">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-11T13:12:24.000Z">
-<meta property="article:modified_time" content="2020-02-11T13:12:24.000Z">
+<meta property="article:published_time" content="2020-02-29T15:35:05.000Z">
+<meta property="article:modified_time" content="2020-02-29T15:35:05.000Z">
 <meta property="article:author" content="llxnb">
+<meta property="article:tag" content="oj">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
@@ -31,7 +32,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582991416275">
+  <link rel="stylesheet" href="/css/style.css?v=1582991416264">
 
    
     <style>
@@ -161,15 +162,17 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-            <img src="/img/saber.jpg">
+        <img src="/img/新/79239641_p2_master1200.jpg">
         
-        <h1>artisoc</h1>
+        <h1>二叉搜索树的最近公共祖先</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月11日</a>
-    <a><i class="nexmoefont icon-areachart"></i>151 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>997 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
     
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
     
     
   </div>
@@ -178,30 +181,163 @@
     
       <div id="toc" class="toc-article">
           <ul class="markdownIt-TOC">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#笔记"><span class="toc-text">笔记</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
           </ul>
       </div>
     
   </div>
 
   <article>
-    <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><a id="more"></a>
+    <p>oj</p>
+<a id="more"></a>
 
-<p>Rules：（In Rule Edition）</p>
-<p>eg: shallow autonomoly</p>
-<pre><code class="artisoc">Agt_Init{
-my.X = 25
-my.Y = 25
-my.Direction = Rnd() * 360
+<p>给定一棵二叉搜索树的先序遍历序列，要求你找出任意两结点的最近公共祖先结点（简称 LCA）。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入的第一行给出两个正整数：待查询的结点对数 M（≤ 1 000）和二叉搜索树中结点个数 N（≤ 10 000）。随后一行给出 N 个不同的整数，为二叉搜索树的先序遍历序列。最后 M 行，每行给出一对整数键值 U 和 V。所有键值都在整型<strong>int</strong>范围内。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每一对给定的 U 和 V，如果找到 <code>A</code> 是它们的最近公共祖先结点的键值，则在一行中输出 <code>LCA of U and V is A.</code>。但如果 U 和 V 中的一个结点是另一个结点的祖先，则在一行中输出 <code>X is an ancestor of Y.</code>，其中 <code>X</code> 是那个祖先结点的键值，<code>Y</code> 是另一个键值。如果 二叉搜索树中找不到以 U 或 V 为键值的结点，则输出 <code>ERROR: U is not found.</code> 或者 <code>ERROR: V is not found.</code>，或者 <code>ERROR: U and V are not found.</code>。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code class="in">6 8
+6 3 1 2 5 4 8 7
+2 5
+8 7
+1 9
+12 -3
+0 8
+99 99</code></pre>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code class="out">LCA of 2 and 5 is 3.
+8 is an ancestor of 7.
+ERROR: 9 is not found.
+ERROR: 12 and -3 are not found.
+ERROR: 0 is not found.
+ERROR: 99 and 99 are not found.</code></pre>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>注释什么的都写在代码里了</p>
+<p>还挺难想的，乱七八糟不列出来头都大了</p>
+<p>最坑的是nm句尾的英文句号</p>
+<p>虽然我不玩星际，但我♥在星际</p>
+<p>👴佛了</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn = 100000;
+
+struct BSTree//二叉搜索树结构体
+{
+    int lt;//左
+    int rt;//右
+    int fa;//父
+} BST[maxn];
+
+int a[maxn],b[maxn];
+int ans;//如果有公共节点，用来存放答案
+int visitedRecord[maxn];//记录是否被访问过了
+
+void build(int rt, int val)//build tree
+{
+    if(!rt)
+        return;
+
+    if(rt&gt;val)//插左边
+    {
+        if(BST[rt].lt)//有左子树再判断
+            build(BST[rt].lt, val);
+        else
+        {
+            BST[rt].lt=val;
+            BST[val].fa=rt;
+            return;
+        }
+    }
+
+    else//插右边
+    {
+        if(BST[rt].rt)
+            build(BST[rt].rt, val);
+        else
+        {
+            BST[rt].rt=val;
+            BST[val].fa=rt;
+            return ;
+        }
+    }
 }
-Agt_Step{
-Forward(1)
+
+void F(int t)//找该节点的老父亲
+{
+    if(!t)
+        return ;
+    if(visitedRecord[t])
+    {
+        ans=t;//如果被标记了就说明被访问过了，即公共节点
+        return ;
+    }
+    visitedRecord[t]=1;//第一次调用时把所有的经过的节点都标记
+    F(BST[t].fa);//找到头
+}
+
+int main()
+{
+    int n,m;
+    cin&gt;&gt;m&gt;&gt;n;
+
+    for(int i=0; i&lt;=10000; i++)//初始化
+    {
+        BST[i].lt=0;
+        BST[i].rt=0;
+        BST[i].fa=0;
+    }
+
+    for(int i=1; i&lt;=n; i++)
+    {
+        cin&gt;&gt;a[i];
+        b[i]=a[i];
+    }
+
+    sort(b+1,b+n+1);//为了后面的lower_bound
+    int rt;//根节点
+
+    for(int i=1; i&lt;=n; i++)
+    {
+        a[i]=lower_bound(b+1, b+n+1, a[i])-b;//更新a[i]为b中a[i]的位置
+        //cout&lt;&lt;&quot;a:&quot;&lt;&lt;a[i]&lt;&lt;&quot; &quot;&lt;&lt;a[i] + b&lt;&lt;endl;
+        if(i==1)//第一个位置作为根节点
+            rt=a[i];
+        else
+            build(rt, a[i]);
+    }
+    for(int i=1; i&lt;=m; i++)
+    {
+        int st,ed;
+        cin&gt;&gt;st&gt;&gt;ed;
+
+        int s1=lower_bound(b+1,b+n+1,st)-b;
+        int s2=lower_bound(b+1,b+n+1,ed)-b;
+
+        if(b[s1]!=st and b[s2]!=ed)//两个都找不到{
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;st&lt;&lt;&quot; and &quot;&lt;&lt;ed&lt;&lt;&quot; are not found.&quot;&lt;&lt;endl;
+
+        else if(b[s1] != st)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;st&lt;&lt;&quot; is not found.&quot;&lt;&lt;endl;
+
+        else if(b[s2] != ed)
+            cout&lt;&lt;&quot;ERROR: &quot;&lt;&lt;ed&lt;&lt;&quot; is not found.&quot;&lt;&lt;endl;
+
+        else{
+            F(s1);
+            if(visitedRecord[s2])//s2在这条路径上
+                cout&lt;&lt;ed&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;st&lt;&lt;&quot;.&quot;&lt;&lt;endl;
+            else
+            {
+                F(s2);
+                if(ans==s1)
+                    cout&lt;&lt;st&lt;&lt;&quot; is an ancestor of &quot;&lt;&lt;ed&lt;&lt;&quot;.&quot;&lt;&lt;endl;
+                else
+                    cout&lt;&lt;&quot;LCA of &quot;&lt;&lt;st&lt;&lt;&quot; and &quot;&lt;&lt;ed&lt;&lt;&quot; is &quot;&lt;&lt;b[ans]&lt;&lt;&quot;.&quot;&lt;&lt;endl;
+            }
+        }
+
+        for(int i = 0; i &lt; 10000;i++)//为下一次检测初始化
+            visitedRecord[i] = 0;
+
+        ans=0;
+    }
 }</code></pre>
-<p>Rnd( )  : function that generates a uniform random number greater than or equal to zero and less than one</p>
-<p>Forward( ) : makes the agent move forward by the numeric value in parentheses in its direction each simulation step.</p>
-<p> GetCountStep( ): indicates the step count after artisoc starts running a simulation</p>
-<p>MakeAllAgtsetAroundOwn(My.Neighborhood, 2, False) </p>
-<p>This allows a Person agent to recognize all the surrounding agents within a visibility 2 and store the result into the AgtSet type variable Neighborhood . False at the end in parentheses indicates that each Person itself is not included in its surroundings. It means that False allows the Person to recognize that “there is no one” when alone. If you change it to True , the Person recognizes that “there is no one but me” if alone.</p>
 
   </article>
   
@@ -209,7 +345,7 @@ Forward(1)
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>llxnb<br>
-<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/11/artisoc/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;artisoc&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;artisoc&#x2F;</a><br>
+<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/29/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;29&#x2F;%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;29&#x2F;%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -265,7 +401,7 @@ Forward(1)
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582991416276"></script>
+<script src="/js/app.js?v=1582991416266"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
