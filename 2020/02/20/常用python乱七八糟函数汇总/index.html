@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>深入虎穴 - LLXNB</title>
+  <title>常用python乱七八糟函数汇总 - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,17 +11,17 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="oj">
+  <meta name="description" content="人到中年记性差（x 慢慢学慢慢记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入虎穴">
-<meta property="og:url" content="http://llx-08.github.io/2020/02/22/%E6%B7%B1%E5%85%A5%E8%99%8E%E7%A9%B4/index.html">
+<meta property="og:title" content="常用python乱七八糟函数汇总">
+<meta property="og:url" content="http://llx-08.github.io/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="LLXNB">
-<meta property="og:description" content="oj">
+<meta property="og:description" content="人到中年记性差（x 慢慢学慢慢记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-22T09:43:00.000Z">
-<meta property="article:modified_time" content="2020-02-22T09:43:00.000Z">
+<meta property="article:published_time" content="2020-02-20T13:55:14.000Z">
+<meta property="article:modified_time" content="2020-02-20T13:55:14.000Z">
 <meta property="article:author" content="llxnb">
-<meta property="article:tag" content="oj">
+<meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582961090357">
+  <link rel="stylesheet" href="/css/style.css?v=1582961090362">
 
    
     <style>
@@ -162,17 +162,17 @@
         <div class="nexmoe-post">
     <div class="nexmoe-post-cover"> 
         
-        <img src="/img/图片任务组_20200211_1254/65876747_p0_master1200.jpg">
+        <img src="/img/illust_79028211_20200124_233532.png">
         
-        <h1>深入虎穴</h1>
+        <h1>常用python乱七八糟函数汇总</h1>
     </div>
   <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>586 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>616 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
     
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
     
     
   </div>
@@ -181,106 +181,104 @@
     
       <div id="toc" class="toc-article">
           <ul class="markdownIt-TOC">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-text">输出样例：</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#画图类（-和matlab简直如出一辙）"><span class="toc-text">画图类（#和matlab简直如出一辙）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习类"><span class="toc-text">机器学习类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用激活函数"><span class="toc-text">常用激活函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#神经网络层"><span class="toc-text">神经网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-keras-Dense"><span class="toc-text">1. keras.Dense()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-LSTM层"><span class="toc-text">2. LSTM层</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Conv2D"><span class="toc-text">3. Conv2D</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用optimizer："><span class="toc-text">常用optimizer：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用损失函数："><span class="toc-text">常用损失函数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用网络结构"><span class="toc-text">常用网络结构</span></a></li></ol></li></ol></li></ol>
           </ul>
       </div>
     
   </div>
 
   <article>
-    <p>oj</p>
+    <p>人到中年记性差（x</p>
+<p>慢慢学慢慢记</p>
 <a id="more"></a>
 
-<p>7-4 深入虎穴 </p>
-<p>著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。</p>
-<p>内线告诉他，情报就藏在迷宫的最深处。但是这个迷宫太大了，他需要你的帮助 —— 请编程帮他找出距离入口最远的那扇门。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入首先在一行中给出正整数 <em>N</em>（&lt;105），是门的数量。最后 <em>N</em> 行，第 <em>i</em> 行（1≤<em>i</em>≤<em>N</em>）按以下格式描述编号为 <em>i</em> 的那扇门背后能通向的门：</p>
-<pre><code>K D[1] D[2] ... D[K]</code></pre><p>其中 <code>K</code> 是通道的数量，其后是每扇门的编号。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出距离入口最远的那扇门的编号。题目保证这样的结果是唯一的。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code class="in">13
-3 2 3 4
-2 5 6
-1 7
-1 8
-1 9
-0
-2 11 10
-1 13
-0
-0
-1 12
-0
-0</code></pre>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code class="out">12</code></pre>
-<p>哎语文也没学好，读题读了好久好久才明白要干啥。</p>
-<p>简单的dfs</p>
-<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
-using namespace std;
+<h2 id="画图类（-和matlab简直如出一辙）"><a href="#画图类（-和matlab简直如出一辙）" class="headerlink" title="画图类（#和matlab简直如出一辙）"></a>画图类（#和matlab简直如出一辙）</h2><pre><code class="python">import matplotlib.pyplot as plt
+import numpy as np
 
-vector&lt;int&gt; door[1000000];
-vector&lt;int &gt; f;
+data = np.linspace(-10, 10, data_size) # -10到10，分成data_size份
 
-int dep[1000000];
-int fir;
-int ans;
-int ansno;
+noise = np.random.normal(scale= , size= ) #normal:正态分布的随机数据；size多少个
 
+plt.scatter(&quot;x&quot;, &quot;y&quot;) # 画散点图
 
-void dfs(int begin, int depth){
+plt.plot() # 画折线图
+#如果像下面这样缺省X，自动把下标作为X
+plt.plot([20,2,40,6,80])   #缺省x为[0,1,2,3,4,...]
+#自定义画布大小
+plt.figure(num=&#39;fig222222&#39;, figsize=(6, 3), 
+           dpi=75, facecolor=&#39;#FFFFFF&#39;, edgecolor=&#39;#FF0000&#39;)
 
-​    if(door[begin].empty()){
-​        if(ans &lt; depth){
-​            ansno = begin;
-​            ans = depth;
-​            //cout&lt;&lt;ansno&lt;&lt;&quot; &quot;&lt;&lt;ans&lt;&lt;endl;
-​            return;
-​        }
-​        else
-​            return;
-​    }
+plt.subplot(222) # matlab里要加逗号作为分隔，分成2x2的子图，下一个图画在第二个位置
 
-​    for (int i = 0; i &lt; door[begin].size(); i++) {
-​        int next = door[begin][i];
-​        //cout&lt;&lt;&quot;n:&quot;&lt;&lt;next&lt;&lt;&quot; &quot;&lt;&lt;depth + 1&lt;&lt;endl;
-​        dep[i] = depth + 1;
-​        dfs(next, depth + 1);
-​    }
-}
+plt.xlim(1,1000) #设置x轴或者y轴刻度范围
 
-int main(){
-    int N;
-    cin&gt;&gt;N;
-    for (int l = 1; l &lt;= N; l++)
-        fir += l;
+plt.show() # 写多了matlab老是忘了写这个还好奇为啥没图</code></pre>
+<h2 id="机器学习类"><a href="#机器学习类" class="headerlink" title="机器学习类"></a>机器学习类</h2><h4 id="常用激活函数"><a href="#常用激活函数" class="headerlink" title="常用激活函数"></a>常用激活函数</h4><pre><code class="python"># keras初始化所有激活函数,activation:
+# keras\activations.py
+# keras\backend\cntk_backend.py
+# import cntk as C
+# 1.softmax：
+#             对输入数据的最后一维进行softmax，一般用在输出层（即最后一层）;
+#     ndim == 2,K.softmax(x),其实调用的是cntk，是一个模块;
+#     ndim &gt;= 2,e = K.exp(x - K.max(x)),s = K.sum(e),return e / s
+# 2.elu
+#     K.elu(x)
+# 3.selu: 可伸缩的指数线性单元
+#     alpha = 1.6732632423543772848170429916717
+#     scale = 1.0507009873554804934193349852946
+#     return scale * K.elu(x, alpha)
+# 4.softplus
+#     C.softplus(x)
+# 5.softsign
+#     return x / (1 + C.abs(x))
+# 6.relu
+#     def relu(x, alpha=0., max_value=None):
+#         if alpha != 0.:
+#             negative_part = C.relu(-x)
+#         x = C.relu(x)
+#         if max_value is not None:
+#             x = C.clip(x, 0.0, max_value)
+#         if alpha != 0.:
+#             x -= alpha * negative_part
+#         return x
+# 7.tanh
+#     return C.tanh(x)
+# 8.sigmoid
+#     return C.sigmoid(x)
+# 9.hard_sigmoid
+#     x = (0.2 * x) + 0.5
+#     x = C.clip(x, 0.0, 1.0)
+#     return x
+# 10.linear
+#     return x</code></pre>
+<h4 id="神经网络层"><a href="#神经网络层" class="headerlink" title="神经网络层"></a>神经网络层</h4><h5 id="1-keras-Dense"><a href="#1-keras-Dense" class="headerlink" title="1. keras.Dense()"></a>1. keras.Dense()</h5><pre><code class="python">import keras
 
-​    for (int i = 1; i &lt;= N; i++) {
-​        int x;
-​        cin&gt;&gt;x;
-​        if(x != 0)
-​            for (int j = 0; j &lt; x; j++) {
-​                int t;
-​                cin&gt;&gt;t;
-​                fir -= t;
-​                door[i].push_back(t);
-​                f.push_back(t);
-​            }
-​    }
-​    //cout&lt;&lt;&quot;f:&quot;&lt;&lt;fir&lt;&lt;endl;
-​    dep[fir] = 1;
+keras.layers.core.Dense(
+units, #代表该层的输出维度
+activation=None, #激活函数.但是默认 liner
+use_bias=True, #是否使用b
+kernel_initializer=&#39;glorot_uniform&#39;, #初始化w权重，keras/initializers.py
+bias_initializer=&#39;zeros&#39;, #初始化b权重
+kernel_regularizer=None, #施加在权重w上的正则项,keras/regularizer.py
+bias_regularizer=None, #施加在偏置向量b上的正则项
+activity_regularizer=None, #施加在输出上的正则项
+kernel_constraint=None, #施加在权重w上的约束项
+bias_constraint=None #施加在偏置b上的约束项
+)
 
-​    dfs(fir,1);
-
-​    cout&lt;&lt;ansno;
-​    return 0;
-}</code></pre>
-
+# 所实现的运算是output = activation(dot(input, kernel)+bias)
+# model.add(Dense(units=64, activation=&#39;relu&#39;, input_dim=784))</code></pre>
+<h5 id="2-LSTM层"><a href="#2-LSTM层" class="headerlink" title="2. LSTM层"></a>2. LSTM层</h5><h6 id="3-Conv2D"><a href="#3-Conv2D" class="headerlink" title="3. Conv2D"></a>3. Conv2D</h6><h4 id="常用optimizer："><a href="#常用optimizer：" class="headerlink" title="常用optimizer："></a>常用optimizer：</h4><p>SGD（随机梯度下降法），rmsprop</p>
+<h4 id="常用损失函数："><a href="#常用损失函数：" class="headerlink" title="常用损失函数："></a>常用损失函数：</h4><p>mse（均方误差），categorical_crossentropy（）</p>
+<p>binary_crossentropy(二元交叉熵)</p>
+<h4 id="常用网络结构"><a href="#常用网络结构" class="headerlink" title="常用网络结构"></a>常用网络结构</h4>
   </article>
   
     
 <div class="nexmoe-post-copyright">
 <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
 <strong>本文作者：</strong>llxnb<br>
-<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/22/%E6%B7%B1%E5%85%A5%E8%99%8E%E7%A9%B4/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;22&#x2F;%E6%B7%B1%E5%85%A5%E8%99%8E%E7%A9%B4&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;22&#x2F;%E6%B7%B1%E5%85%A5%E8%99%8E%E7%A9%B4&#x2F;</a><br>
+<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;</a><br>
 
   <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -336,7 +334,7 @@ int main(){
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582961090358"></script>
+<script src="/js/app.js?v=1582961090365"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
