@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1582991416272">
+  <link rel="stylesheet" href="/css/style.css?v=1583226434403">
 
    
     <style>
@@ -133,7 +133,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 16.67px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 13.33px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 20px;">oj</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li></ul>
     </div>
   </div>
 
@@ -168,7 +168,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月20日</a>
-    <a><i class="nexmoefont icon-areachart"></i>616 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>691 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
     
     
@@ -268,8 +268,13 @@ bias_constraint=None #施加在偏置b上的约束项
 
 # 所实现的运算是output = activation(dot(input, kernel)+bias)
 # model.add(Dense(units=64, activation=&#39;relu&#39;, input_dim=784))</code></pre>
-<h5 id="2-LSTM层"><a href="#2-LSTM层" class="headerlink" title="2. LSTM层"></a>2. LSTM层</h5><h6 id="3-Conv2D"><a href="#3-Conv2D" class="headerlink" title="3. Conv2D"></a>3. Conv2D</h6><h4 id="常用optimizer："><a href="#常用optimizer：" class="headerlink" title="常用optimizer："></a>常用optimizer：</h4><p>SGD（随机梯度下降法），rmsprop</p>
-<h4 id="常用损失函数："><a href="#常用损失函数：" class="headerlink" title="常用损失函数："></a>常用损失函数：</h4><p>mse（均方误差），categorical_crossentropy（）</p>
+<h5 id="2-LSTM层"><a href="#2-LSTM层" class="headerlink" title="2. LSTM层"></a>2. LSTM层</h5><h6 id="3-Conv2D"><a href="#3-Conv2D" class="headerlink" title="3. Conv2D"></a>3. Conv2D</h6><h4 id="常用optimizer："><a href="#常用optimizer：" class="headerlink" title="常用optimizer："></a>常用optimizer：</h4><p>全局梯度下降：投入所有样本</p>
+<p>随机梯度下降（SGD）：每次只接受一个样本</p>
+<p>批次梯度下降：接受一部分样本。batch_size = 1:SGD</p>
+<p>Adam：</p>
+<p>rmsprop：</p>
+<h4 id="常用损失函数："><a href="#常用损失函数：" class="headerlink" title="常用损失函数："></a>常用损失函数：</h4><p>mse（均方误差）：常用于回归问题，分类也可以用，但因为分类预测值都在0,1之间，mse求出梯度较小，训练更慢</p>
+<p>categorical_crossentropy（）</p>
 <p>binary_crossentropy(二元交叉熵)</p>
 <h4 id="常用网络结构"><a href="#常用网络结构" class="headerlink" title="常用网络结构"></a>常用网络结构</h4>
   </article>
@@ -334,7 +339,7 @@ bias_constraint=None #施加在偏置b上的约束项
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1582991416273"></script>
+<script src="/js/app.js?v=1583226434404"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
