@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
-  <title>常用python乱七八糟函数汇总 - LLXNB</title>
+
+  <title>常用Python乱七八糟函数汇总 - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
   <meta name="description" content="人到中年记性差（x 慢慢学慢慢记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用python乱七八糟函数汇总">
+<meta property="og:title" content="常用Python乱七八糟函数汇总">
 <meta property="og:url" content="http://llx-08.github.io/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="LLXNB">
 <meta property="og:description" content="人到中年记性差（x 慢慢学慢慢记">
@@ -23,16 +25,9 @@
 <meta property="article:author" content="llxnb">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1583646442678">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584021611137">-->
 
    
     <style>
@@ -48,13 +43,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/saber.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png"></a>
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
        </div>
     </div>
   </div>
@@ -62,15 +57,15 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="llxnb">
-            <img src="/img/head.png" alt="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>18</div>
+        <div><span>文章</span>22</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
@@ -86,10 +81,10 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于（客官来玩呀~）">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于（客官来玩呀~）
+                关于(客官来玩呀~
             </div>
         </a>
         
@@ -100,13 +95,13 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://www.google.com/search?q=llx-08.github.io" onsubmit="return search();">
-            <input id="search_value" name="q" type="search" placeholder="搜索">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
 </div>
@@ -118,10 +113,6 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'Steam:llxnb'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'QQ:2596671364'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
         </a>
     </div>
 </div>
@@ -160,29 +151,27 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="/img/illust_79028211_20200124_233532.png">
-        
-        <h1>常用python乱七八糟函数汇总</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 0.5833333333333334%;"> 
+          <img data-src="/img/illust_79028211_20200124_233532.png" data-sizes="auto" alt="常用Python乱七八糟函数汇总" class="lazyload">
+          <h1>常用Python乱七八糟函数汇总</h1>
+      </div>
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月20日</a>
     <a><i class="nexmoefont icon-areachart"></i>862 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-    
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-    
-    
-  </div>
+</div>
 
   <div class="nexmoe-post-right">
     
-      <div id="toc" class="toc-article">
-          <ul class="markdownIt-TOC">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#画图类（-和matlab简直如出一辙）"><span class="toc-text">画图类（#和matlab简直如出一辙）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#numpy类"><span class="toc-text">numpy类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习类"><span class="toc-text">机器学习类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用激活函数"><span class="toc-text">常用激活函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#神经网络层"><span class="toc-text">神经网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-keras-Dense"><span class="toc-text">1. keras.Dense()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-LSTM层"><span class="toc-text">2. LSTM层</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Conv2D"><span class="toc-text">3. Conv2D</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用optimizer："><span class="toc-text">常用optimizer：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用损失函数："><span class="toc-text">常用损失函数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用网络结构"><span class="toc-text">常用网络结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用算法"><span class="toc-text">常用算法</span></a></li></ol></li></ol></li></ol>
-          </ul>
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#画图类（-和matlab简直如出一辙）"><span class="toc-number">1.</span> <span class="toc-text">画图类（#和matlab简直如出一辙）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#numpy类"><span class="toc-number">2.</span> <span class="toc-text">numpy类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习类"><span class="toc-number">3.</span> <span class="toc-text">机器学习类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用激活函数"><span class="toc-number">3.0.1.</span> <span class="toc-text">常用激活函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#神经网络层"><span class="toc-number">3.0.2.</span> <span class="toc-text">神经网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-keras-Dense"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">1. keras.Dense()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-LSTM层"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">2. LSTM层</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Conv2D"><span class="toc-number">3.0.2.2.1.</span> <span class="toc-text">3. Conv2D</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用optimizer："><span class="toc-number">3.0.3.</span> <span class="toc-text">常用optimizer：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用损失函数："><span class="toc-number">3.0.4.</span> <span class="toc-text">常用损失函数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用网络结构"><span class="toc-number">3.0.5.</span> <span class="toc-text">常用网络结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用算法"><span class="toc-number">3.0.6.</span> <span class="toc-text">常用算法</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
       </div>
     
   </div>
@@ -298,78 +287,55 @@ bias_constraint=None #施加在偏置b上的约束项
 <p>binary_crossentropy(二元交叉熵)</p>
 <h4 id="常用网络结构"><a href="#常用网络结构" class="headerlink" title="常用网络结构"></a>常用网络结构</h4><h4 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h4>
   </article>
-  
+
+  <div class="nexmoe-post-meta">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>llxnb<br>
-<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
 </div>
 
-
-  
-  <section class="nexmoe-comment">
+  <div class="nexmoe-post-footer">
     
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
-<script type="text/javascript">
-   (function(d, s) {
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>llxnb<br>
+    <strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="LLXNB">
+    <script id="livere-comment-js">
+    (function(d, s) {
        var j, e = d.getElementsByTagName(s)[0];
-
        if (typeof LivereTower === 'function') { return; }
-
        j = d.createElement(s);
        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
        j.async = true;
-
        e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    })(document, 'script');
+    </script>
 </div>
-<!-- City版安装代码已完成 -->
-
-
-
-
-
-
-
-
-
-
-
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1583646442679"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<!--<script src="/js/app.js?v=1584021611138"></script>-->
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
-<script type="text/javascript"> 
+<script> 
 !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
 </script>
 

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
+
   <title>基础爬虫 - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -25,16 +27,9 @@
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://llx-08.github.io/img/b_robotstxt.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1583646442686">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584021611143">-->
 
    
     <style>
@@ -50,13 +45,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/saber.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png"></a>
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
        </div>
     </div>
   </div>
@@ -64,15 +59,15 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="llxnb">
-            <img src="/img/head.png" alt="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>18</div>
+        <div><span>文章</span>22</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
@@ -88,10 +83,10 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于（客官来玩呀~）">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于（客官来玩呀~）
+                关于(客官来玩呀~
             </div>
         </a>
         
@@ -102,13 +97,13 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://www.google.com/search?q=llx-08.github.io" onsubmit="return search();">
-            <input id="search_value" name="q" type="search" placeholder="搜索">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
 </div>
@@ -120,10 +115,6 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'Steam:llxnb'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'QQ:2596671364'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
         </a>
     </div>
 </div>
@@ -162,29 +153,27 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="/img/新/79225815_p0_master1200.jpg">
-        
-        <h1>基础爬虫</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 0.5%;"> 
+          <img data-src="/img/新/79225815_p0_master1200.jpg" data-sizes="auto" alt="基础爬虫" class="lazyload">
+          <h1>基础爬虫</h1>
+      </div>
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
     <a><i class="nexmoefont icon-areachart"></i>864 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-    
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-    
-    
-  </div>
+</div>
 
   <div class="nexmoe-post-right">
     
-      <div id="toc" class="toc-article">
-          <ul class="markdownIt-TOC">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REQUESTS"><span class="toc-text">REQUESTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeautifulSoup"><span class="toc-text">BeautifulSoup</span></a></li></ol>
-          </ul>
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REQUESTS"><span class="toc-number">2.</span> <span class="toc-text">REQUESTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li></ol>
+            </div>
+        </div>
       </div>
     
   </div>
@@ -198,7 +187,7 @@
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>基本原理其实就是对网站发出一个请求，获取网站的信息后对其进行分析，进行下一步爬取然后blablabla</p>
 <p>当然为了保证编写的爬虫都是合法的，还是建议在爬取网站之前先查看该网站的robots.txt，直接在网站url后面加上/robots.txt 就可以了，看看那些让爬那些不让爬。写的时候也不要爬太快把别人服务器爬崩了，用python写的话加上点 time.sleep(1)啥的，当然这些都是后话</p>
 <p>比如b站的</p>
-<p><img src="/img/b_robotstxt.png" alt="b_robotstxt"></p>
+<p><img data-sizes="auto" data-src="/img/b_robotstxt.png" alt="b_robotstxt" class="lazyload"></p>
 <p>然后我们就能惊喜的发现b站就没一个allow的，可能还有别的，但我也没仔细看</p>
 <p>我一开始学的时候就特别想爬b站，然后每次都是403forbidden，严重的打击了我的学习热情（x</p>
 <hr>
@@ -228,78 +217,55 @@ soup = BeautifulSoup(html, &#39;lxml&#39;) #html是获取的网页代码？不�
 <p>在这里给一点推荐，一个是Scrapy框架，另外一个是selenium库。这两个东西至少我目前写的爬虫没有遇到任何阻拦，马上要看网课了，后面再接着写。</p>
 
   </article>
-  
+
+  <div class="nexmoe-post-meta">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>llxnb<br>
-<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/08/%E7%88%AC%E8%99%AB/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E7%88%AC%E8%99%AB&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E7%88%AC%E8%99%AB&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
 </div>
 
-
-  
-  <section class="nexmoe-comment">
+  <div class="nexmoe-post-footer">
     
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
-<script type="text/javascript">
-   (function(d, s) {
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>llxnb<br>
+    <strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/08/%E7%88%AC%E8%99%AB/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E7%88%AC%E8%99%AB&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E7%88%AC%E8%99%AB&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="LLXNB">
+    <script id="livere-comment-js">
+    (function(d, s) {
        var j, e = d.getElementsByTagName(s)[0];
-
        if (typeof LivereTower === 'function') { return; }
-
        j = d.createElement(s);
        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
        j.async = true;
-
        e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    })(document, 'script');
+    </script>
 </div>
-<!-- City版安装代码已完成 -->
-
-
-
-
-
-
-
-
-
-
-
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1583646442687"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<!--<script src="/js/app.js?v=1584021611145"></script>-->
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
-<script type="text/javascript"> 
+<script> 
 !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
 </script>
 

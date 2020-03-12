@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
+
   <title>LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -20,16 +22,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="llxnb">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1583646442710">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584021611156">-->
 
    
     <style>
@@ -45,13 +40,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/saber.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png"></a>
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
        </div>
     </div>
   </div>
@@ -59,15 +54,15 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="llxnb">
-            <img src="/img/head.png" alt="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>18</div>
+        <div><span>文章</span>22</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
@@ -83,10 +78,10 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于（客官来玩呀~）">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于（客官来玩呀~）
+                关于(客官来玩呀~
             </div>
         </a>
         
@@ -97,13 +92,13 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://www.google.com/search?q=llx-08.github.io" onsubmit="return search();">
-            <input id="search_value" name="q" type="search" placeholder="搜索">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
 </div>
@@ -115,10 +110,6 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'Steam:llxnb'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'QQ:2596671364'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
         </a>
     </div>
 </div>
@@ -156,489 +147,210 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts" id="brand-waterfall">
+        <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2020/03/12/%E6%98%9F%E6%8E%A0%E8%80%85/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 67.70833333333334%;"> 
+                    <img data-src="\img\新\55116360_p0.jpg" data-sizes="auto" alt="星掠者" class="lazyload">
+                    <h1>星掠者</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月12日</a>
+            <a><i class="nexmoefont icon-areachart"></i>248 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>好看的漫画</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2020/03/11/%E5%8F%82%E4%B8%8E%E8%80%85%E4%BA%BA%E6%95%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 62.5%;"> 
+                    <img data-src="\img\琉璃神社壁纸包 2020年1月号\acg,gy_21.jpg" data-sizes="auto" alt="参与者人数" class="lazyload">
+                    <h1>参与者人数</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月11日</a>
+            <a><i class="nexmoefont icon-areachart"></i>511 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>7-1 参与者人数 (20分)</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2020/03/09/%E5%A5%BD%E7%8E%A9%E7%9A%84%E7%BD%91%E7%AB%99/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 52.083333333333336%;"> 
+                    <img data-src="\img\111.png" data-sizes="auto" alt="好玩的网站" class="lazyload">
+                    <h1>好玩的网站</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月09日</a>
+            <a><i class="nexmoefont icon-areachart"></i>10 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>I can do this all day~</p>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2020/03/08/GAN/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 62.5%;"> 
+                    <img data-src="\img\ipad\IMG_0068(20191108-212424).JPG" data-sizes="auto" alt="GAN!" class="lazyload">
+                    <h1>GAN!</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月08日</a>
+            <a><i class="nexmoefont icon-areachart"></i>11 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>淦！（生成式对抗网络）——超哥nb</p>
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2020/03/08/%E5%89%8D%E7%AB%AF%E2%80%94%E2%80%94CSS/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/saber.jpg" alt="前端——CSS">
-                
-                <h1>前端——CSS</h1>
-            </div>
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="前端——CSS" class="lazyload">
+                    <h1>前端——CSS</h1>
+                </div>
+            
         </a>
+
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月08日</a>
             <a><i class="nexmoefont icon-areachart"></i>60 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a>
-            
         </div>
+
         <article>
             
-            <p>层叠样式表</p>
+                <p>层叠样式表</p>
             
         </article>
     </div>
     
     <div class="nexmoe-post">
         <a href="/2020/03/07/%E6%9C%80%E9%80%9F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="\img\ipad\IMG_0243.PNG" alt="最速梯度下降">
-                
-                <h1>最速梯度下降</h1>
-            </div>
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 67.70833333333334%;"> 
+                    <img data-src="\img\ipad\IMG_0243.PNG" data-sizes="auto" alt="最速梯度下降" class="lazyload">
+                    <h1>最速梯度下降</h1>
+                </div>
+            
         </a>
+
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月07日</a>
             <a><i class="nexmoefont icon-areachart"></i>289 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
         </div>
+
         <article>
             
-            <p>最速传说（xxx</p>
+                <p>最速传说（xxx</p>
             
         </article>
     </div>
     
     <div class="nexmoe-post">
         <a href="/2020/03/05/%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/78413749_p0_master1200.jpg" alt="缺失的第一个正数">
-                
-                <h1>缺失的第一个正数</h1>
-            </div>
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 65.625%;"> 
+                    <img data-src="/img/78413749_p0_master1200.jpg" data-sizes="auto" alt="缺失的第一个正数" class="lazyload">
+                    <h1>缺失的第一个正数</h1>
+                </div>
+            
         </a>
+
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月05日</a>
             <a><i class="nexmoefont icon-areachart"></i>728 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%8A%9B%E6%89%A3/" rel="tag">力扣</a>
-            
         </div>
+
         <article>
             
-            <h4 id="41-缺失的第一个正数"><a href="#41-缺失的第一个正数" class="headerlink" title="41. 缺失的第一个正数"></a><a href="https://leetcode-cn.com/problems/first-missing-positive/" target="_blank" rel="noopener">41. 缺失的第一个正数</a></h4>
+                <h4 id="41-缺失的第一个正数"><a href="#41-缺失的第一个正数" class="headerlink" title="41. 缺失的第一个正数"></a><a href="https://leetcode-cn.com/problems/first-missing-positive/" target="_blank" rel="noopener">41. 缺失的第一个正数</a></h4>
             
         </article>
     </div>
     
     <div class="nexmoe-post">
         <a href="/2020/03/05/%E5%89%8D%E7%AB%AF%E2%80%94%E2%80%94js/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/图片任务组_20200210_1320(1)/39648445_p0_master1200.jpg" alt="前端——js">
-                
-                <h1>前端——js</h1>
-            </div>
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 67.70833333333334%;"> 
+                    <img data-src="/img/图片任务组_20200210_1320(1)/39648445_p0_master1200.jpg" data-sizes="auto" alt="前端——Js" class="lazyload">
+                    <h1>前端——Js</h1>
+                </div>
+            
         </a>
+
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月05日</a>
             <a><i class="nexmoefont icon-areachart"></i>10 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
         </div>
+
         <article>
             
-            <p>笔记</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/03/03/%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%AC%BC%E7%95%9C/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/ipad/IMG_0074(20191104-152754).JPG" alt="好看的鬼畜">
-                
-                <h1>好看的鬼畜</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月03日</a>
-            <a><i class="nexmoefont icon-areachart"></i>94 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a>
-            
-        </div>
-        <article>
-            
-            <p>持续更新</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/03/02/Sort-with-Swap-0-i/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/ipad/IMG_0063(20191101-131333).JPG" alt="Sort_with_Swap(0,i)">
-                
-                <h1>Sort_with_Swap(0,i)</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月02日</a>
-            <a><i class="nexmoefont icon-areachart"></i>434 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
-            
-        </div>
-        <article>
-            
-            <p>oj</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/29/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/新/79239641_p2_master1200.jpg" alt="二叉搜索树的最近公共祖先">
-                
-                <h1>二叉搜索树的最近公共祖先</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月29日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
-            
-        </div>
-        <article>
-            
-            <p>oj</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/22/%E7%A7%80%E6%81%A9%E7%88%B1%E5%88%86%E5%BE%97%E5%BF%AB/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/cover.jpg" alt="秀恩爱分得快">
-                
-                <h1>秀恩爱分得快</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月22日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
-            
-        </div>
-        <article>
-            
-            <p>7-5 秀恩爱分得快 (25分)</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/22/%E6%B7%B1%E5%85%A5%E8%99%8E%E7%A9%B4/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/图片任务组_20200211_1254/65876747_p0_master1200.jpg" alt="深入虎穴">
-                
-                <h1>深入虎穴</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月22日</a>
-            <a><i class="nexmoefont icon-areachart"></i>586 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
-            
-        </div>
-        <article>
-            
-            <p>oj</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/22/%E4%B8%AD%E4%BD%8D%E6%95%B0/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/图片任务组_20200211_1253/79358771_p0_master1200.jpg" alt="中位数">
-                
-                <h1>中位数</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月22日</a>
-            <a><i class="nexmoefont icon-areachart"></i>415 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/oj/" rel="tag">oj</a>
-            
-        </div>
-        <article>
-            
-            <p>oj</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/21/%E9%81%97%E6%84%BF%E6%B8%85%E5%8D%95/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/illust_79519820_20200226_090503.jpg" alt="遗愿清单">
-                
-                <h1>遗愿清单</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月21日</a>
-            <a><i class="nexmoefont icon-areachart"></i>114 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a>
-            
-        </div>
-        <article>
-            
-            <p>我总觉得这篇封面应该用上一篇的封面。</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/20/%E5%B8%B8%E7%94%A8python%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/illust_79028211_20200124_233532.png" alt="常用python乱七八糟函数汇总">
-                
-                <h1>常用python乱七八糟函数汇总</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月20日</a>
-            <a><i class="nexmoefont icon-areachart"></i>862 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
-        </div>
-        <article>
-            
-            <p>人到中年记性差（x</p>
-<p>慢慢学慢慢记</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/19/java/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/illust_47241762_20200227_085645.jpg" alt="java">
-                
-                <h1>java</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月19日</a>
-            <a><i class="nexmoefont icon-areachart"></i>676 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
-        </div>
-        <article>
-            
-            <p>懒得自学，跟着课走</p>
-<p>这张封面我真的太爱了，asknb</p>
-<h1 id="java笔记"><a href="#java笔记" class="headerlink" title="java笔记"></a>java笔记</h1>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/11/%E6%89%B9%E9%87%8F%E7%88%AC%E5%8F%96pixiv/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/新/79227697_p0_master1200.jpg" alt="批量爬取pixiv">
-                
-                <h1>批量爬取pixiv</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月11日</a>
-            <a><i class="nexmoefont icon-areachart"></i>312 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
-        </div>
-        <article>
-            
-            <h1 id="这个是标题"><a href="#这个是标题" class="headerlink" title="这个是标题"></a>这个是标题</h1>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/10/xpath%E7%AC%94%E8%AE%B0/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/新/79224969_p0_master1200.jpg" alt="xpath笔记">
-                
-                <h1>xpath笔记</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月10日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
-        </div>
-        <article>
-            
-            <h1 id="xpath笔记"><a href="#xpath笔记" class="headerlink" title="xpath笔记"></a>xpath笔记</h1>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/08/%E7%88%AC%E8%99%AB/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/新/79225815_p0_master1200.jpg" alt="基础爬虫">
-                
-                <h1>基础爬虫</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>864 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-            
-        </div>
-        <article>
-            
-            <p>老早就想学爬虫了，买了本书啃了一半发现后面的看不太懂，用学了的知识爬想的网站又总被反爬机制啪啪打脸。</p>
-<p>现在无聊之余重新从头梳理一下，正好最近看了好多前端的东西，看当时学不懂的现在能不能学会一点。</p>
-<p>我自己也在学习当中，如果有人看并且觉得有问题的话欢迎指出。</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/08/jojo%E7%9A%84%E5%A5%87%E5%A6%99%E6%AD%8C%E5%A3%B0/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/saber.jpg" alt="jojo的奇妙歌声">
-                
-                <h1>jojo的奇妙歌声</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>15 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a>
-            
-        </div>
-        <article>
-            
-            <p>太草了</p>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2020/02/08/%E5%BA%8F/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="/img/landscape.png" alt="序">
-                
-                <h1>序</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>160 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a>
-            
-        </div>
-        <article>
-            
-            <h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1>
+                <p>笔记</p>
             
         </article>
     </div>
     
 </section>
 
+    <nav class="nexmoe-page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1583646442712"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<!--<script src="/js/app.js?v=1584021611157"></script>-->
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
-<script type="text/javascript"> 
+<script> 
 !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
 </script>
 

@@ -28,26 +28,11 @@ for (let link of links) {
     link.className = "active nexmoe-list-item mdui-list-item mdui-ripple";
   }
 }
+
+var $ = mdui.JQ;
 $("table")
   .has("img")
   .addClass("nexmoe-album");
-
-$("#nexmoe-content img").each(function() {
-  $(this).attr("data-src", $(this).attr("src"));
-  $(this).attr("src", "");
-  $(this).addClass("lazyload");
-  $(this).attr("referrerPolicy", "no-referrer");
-});
-
-$("article:not(.nexmoe-py) img").each(function() {
-  if($(this).parent()[0].localName!=="a"){
-    var element = document.createElement("a");
-    $(element).attr("data-fancybox", "gallery");
-    $(element).attr("href", $(this).attr("data-src"));
-    $(this).wrap(element);
-  }  
-});
-
 
 $("#nexmoe-sidebar a").addClass("mdui-ripple");
 mdui.mutation();

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
-  <title>java - LLXNB</title>
+
+  <title>Java - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
   <meta name="description" content="懒得自学，跟着课走 这张封面我真的太爱了，asknb java笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java">
+<meta property="og:title" content="Java">
 <meta property="og:url" content="http://llx-08.github.io/2020/02/19/java/index.html">
 <meta property="og:site_name" content="LLXNB">
 <meta property="og:description" content="懒得自学，跟着课走 这张封面我真的太爱了，asknb java笔记">
@@ -23,16 +25,9 @@
 <meta property="article:author" content="llxnb">
 <meta property="article:tag" content="学习">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1583646442680">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584021611139">-->
 
    
     <style>
@@ -48,13 +43,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/saber.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png"></a>
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
        </div>
     </div>
   </div>
@@ -62,15 +57,15 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="llxnb">
-            <img src="/img/head.png" alt="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>18</div>
+        <div><span>文章</span>22</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
@@ -86,10 +81,10 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于（客官来玩呀~）">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于（客官来玩呀~）
+                关于(客官来玩呀~
             </div>
         </a>
         
@@ -100,13 +95,13 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://www.google.com/search?q=llx-08.github.io" onsubmit="return search();">
-            <input id="search_value" name="q" type="search" placeholder="搜索">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
 </div>
@@ -118,10 +113,6 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'Steam:llxnb'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'QQ:2596671364'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
         </a>
     </div>
 </div>
@@ -160,29 +151,27 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="/img/illust_47241762_20200227_085645.jpg">
-        
-        <h1>java</h1>
-    </div>
-  <div class="nexmoe-post-meta">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 0.625%;"> 
+          <img data-src="/img/illust_47241762_20200227_085645.jpg" data-sizes="auto" alt="Java" class="lazyload">
+          <h1>Java</h1>
+      </div>
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>676 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-    
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
-    
-    
-  </div>
+    <a><i class="nexmoefont icon-areachart"></i>1.8k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+</div>
 
   <div class="nexmoe-post-right">
     
-      <div id="toc" class="toc-article">
-          <ul class="markdownIt-TOC">
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java笔记"><span class="toc-text">java笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#强引用："><span class="toc-text">强引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#软引用："><span class="toc-text">软引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#弱引用："><span class="toc-text">弱引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#虚引用："><span class="toc-text">虚引用：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解"><span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用在代码的常用注解"><span class="toc-text">1. 作用在代码的常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#（1）-Override"><span class="toc-text">（1）@Override</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（2）-Deprecated"><span class="toc-text">（2）@Deprecated</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#标记过时方法。如果使用该方法，会报编译警告。"><span class="toc-text">标记过时方法。如果使用该方法，会报编译警告。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（3）-SuppressWarnings"><span class="toc-text">（3）@SuppressWarnings</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-作用在其他注解的常用注解-或者说-元注解"><span class="toc-text">2.作用在其他注解的常用注解(或者说 元注解):</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#（1）-Retention"><span class="toc-text">（1）@Retention</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（2）-Documented"><span class="toc-text">（2）@Documented</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（3）-Target"><span class="toc-text">（3）@Target</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（4）-Inherited"><span class="toc-text">（4）@Inherited</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
-          </ul>
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java笔记"><span class="toc-number">1.</span> <span class="toc-text">java笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-number">1.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-number">1.1.1.</span> <span class="toc-text">引用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#强引用："><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text">强引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#软引用："><span class="toc-number">1.1.1.0.2.</span> <span class="toc-text">软引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#弱引用："><span class="toc-number">1.1.1.0.3.</span> <span class="toc-text">弱引用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#虚引用："><span class="toc-number">1.1.1.0.4.</span> <span class="toc-text">虚引用：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number">1.2.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解"><span class="toc-number">1.3.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用在代码的常用注解"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 作用在代码的常用注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-作用在其他注解的常用注解-或者说-元注解"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.作用在其他注解的常用注解(或者说 元注解):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类和对象"><span class="toc-number">1.4.</span> <span class="toc-text">类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Super"><span class="toc-number">1.4.0.1.1.</span> <span class="toc-text">Super:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#this："><span class="toc-number">1.4.0.1.2.</span> <span class="toc-text">this：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类型转换："><span class="toc-number">1.4.0.1.3.</span> <span class="toc-text">类型转换：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多态"><span class="toc-number">1.4.0.1.4.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#抽象类-方法（和C-差不多）"><span class="toc-number">1.4.0.1.5.</span> <span class="toc-text">抽象类&#x2F;方法（和C++差不多）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-number">1.4.0.1.6.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内部类"><span class="toc-number">1.4.0.1.7.</span> <span class="toc-text">内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-成员内部类"><span class="toc-number">1.4.0.1.7.1.</span> <span class="toc-text">1.成员内部类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-局部内部类"><span class="toc-number">1.4.0.1.7.2.</span> <span class="toc-text">2.局部内部类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-静态内部类（嵌套类）s"><span class="toc-number">1.4.0.1.7.3.</span> <span class="toc-text">3.静态内部类（嵌套类）s</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Lambda表达式⭐"><span class="toc-number">1.4.0.1.8.</span> <span class="toc-text">Lambda表达式⭐</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#泛型"><span class="toc-number">1.4.0.1.9.</span> <span class="toc-text">泛型</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            </div>
+        </div>
       </div>
     
   </div>
@@ -226,87 +215,160 @@ str = null；</code></pre>
 <p>WeakReference</p>
 <h5 id="虚引用："><a href="#虚引用：" class="headerlink" title="虚引用："></a>虚引用：</h5><h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p> 1.常量</p>
 <p> 2.switch</p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="1-作用在代码的常用注解"><a href="#1-作用在代码的常用注解" class="headerlink" title="1. 作用在代码的常用注解"></a>1. 作用在代码的常用注解</h3><h6 id="（1）-Override"><a href="#（1）-Override" class="headerlink" title="（1）@Override"></a>（1）@Override</h6><p>检查该方法是否是重载方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。</p>
-<h6 id="（2）-Deprecated"><a href="#（2）-Deprecated" class="headerlink" title="（2）@Deprecated"></a>（2）@Deprecated</h6><h6 id="标记过时方法。如果使用该方法，会报编译警告。"><a href="#标记过时方法。如果使用该方法，会报编译警告。" class="headerlink" title="标记过时方法。如果使用该方法，会报编译警告。"></a>标记过时方法。如果使用该方法，会报编译警告。</h6><h6 id="（3）-SuppressWarnings"><a href="#（3）-SuppressWarnings" class="headerlink" title="（3）@SuppressWarnings"></a>（3）@SuppressWarnings</h6><p>指示编译器去忽略注解中声明的警告。</p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="1-作用在代码的常用注解"><a href="#1-作用在代码的常用注解" class="headerlink" title="1. 作用在代码的常用注解"></a>1. 作用在代码的常用注解</h3><p>（1）@Override</p>
+<p>检查该方法是否是重载方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。</p>
+<p>（2）@Deprecated</p>
+<p>标记过时方法。如果使用该方法，会报编译警告。</p>
+<p>（3）@SuppressWarnings </p>
+<p>指示编译器去忽略注解中声明的警告。</p>
 <p>这几个注解都具有编译检查作用</p>
-<h3 id="2-作用在其他注解的常用注解-或者说-元注解"><a href="#2-作用在其他注解的常用注解-或者说-元注解" class="headerlink" title="2.作用在其他注解的常用注解(或者说 元注解):"></a><strong>2.</strong>作用在其他注解的常用注解(或者说 元注解):</h3><h6 id="（1）-Retention"><a href="#（1）-Retention" class="headerlink" title="（1）@Retention"></a>（1）@Retention</h6><p>标识该注解怎么保存，是只在代码中，还是编入class文件中，或者是在运行时可以通过反射访问。</p>
-<h6 id="（2）-Documented"><a href="#（2）-Documented" class="headerlink" title="（2）@Documented"></a>（2）@Documented</h6><p>标记这些注解是否包含在用户文档中。</p>
-<h6 id="（3）-Target"><a href="#（3）-Target" class="headerlink" title="（3）@Target"></a>（3）@Target</h6><p>标记该注解应该是哪种 Java 成员。</p>
-<h6 id="（4）-Inherited"><a href="#（4）-Inherited" class="headerlink" title="（4）@Inherited"></a>（4）@Inherited</h6><p>标记该注解继承于哪个注解类(默认 注解并没有继承于任何子类)</p>
-
+<h3 id="2-作用在其他注解的常用注解-或者说-元注解"><a href="#2-作用在其他注解的常用注解-或者说-元注解" class="headerlink" title="2.作用在其他注解的常用注解(或者说 元注解):"></a><strong>2.</strong>作用在其他注解的常用注解(或者说 元注解):</h3><p>（1）@Retention</p>
+<p>标识该注解怎么保存，是只在代码中，还是编入class文件中，或者是在运行时可以通过反射访问。</p>
+<p>（2）@Documented</p>
+<p>标记这些注解是否包含在用户文档中。</p>
+<p>（3）@Target</p>
+<p>标记该注解应该是哪种 Java 成员。</p>
+<p>（4）@Inherited</p>
+<p>标记该注解继承于哪个注解类(默认 注解并没有继承于任何子类)</p>
+<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>与C艹不同：</p>
+<p>一个Java源文件可以由一个或多个类构成，但其中只能有一个主类（public）。</p>
+<p>主类的特征之一是类名与Java文件名相同，且必须含有main()方法</p>
+<h5 id="Super"><a href="#Super" class="headerlink" title="Super:"></a>Super:</h5><p>关键字super用来引用当前对象的父类。</p>
+<p>可以使用它访问父类中被覆盖的成员（比如参数名相同）。</p>
+<p>基本格式：</p>
+<p>  (1) 访问父类被隐藏的成员变量，如：</p>
+<pre><code class="java">super.variable; </code></pre>
+<p>​    (2) 调用父类中被重写的方法，如：</p>
+<pre><code class="java">super.Method([paramlist]);</code></pre>
+<p>​    (3) 调用父类的构造函数，如：</p>
+<pre><code class="java">super([paramlist]);</code></pre>
+<p>若类没有有参的构造方法，编译器会自动添加一个无参构造方法，在此方法中只有一条语句super()，若已有有参的构造方法，则不会自动添加</p>
+<p>在任何构造方法中的第一条语句，若没有使用super调用父类的任何构造方法，编译器自动添加语句super()</p>
+<p>这里就会有一个有意思的问题：</p>
+<p>如果父类定义了有参数的构造方法（也就是说编译器不会为它产生默认的构造方法），此时当子类没有构造方法的时候，编译器为其生成了的构造方法内只有super（）【注意没有参数】，此时由于父类没有不含参数的构造方法，编译就会出错。（有一种奇怪的严谨性，但是好奇怪）</p>
+<h5 id="this："><a href="#this：" class="headerlink" title="this："></a>this：</h5><p>当局部变量和类的成员变量同名时，在局部变量作用区域内成员变量会被隐藏，这时可以使用this来指明当前对象。</p>
+<pre><code class="java"></code></pre>
+<p>构造代码块：</p>
+<p>直接在类中定义并且没有加static关键字的代码块称为构造代码</p>
+<p>作用：给对象统一初始化数据</p>
+<p>要点：</p>
+<ol>
+<li>成员变量的初始化工作放到构造函数中</li>
+<li>如果类中有构造代码块，java编译器在编译时会先将构造代码块中的代码移到构造函数中执行，即先执行构造代码块的代码再执行构造函数中的代码</li>
+</ol>
+<p>静态代码块</p>
+<p>使用static声明的代码块</p>
+<p>用于初始化类，为类的属性初始化，只执行一次。</p>
+<pre><code class="java"></code></pre>
+<p>继承中，先父后子</p>
+<h5 id="类型转换："><a href="#类型转换：" class="headerlink" title="类型转换："></a>类型转换：</h5><p>看new()使用的是哪一块内存，不管定义时使用的是什么类型，调用该对象时都调用的是内存类型的方法。</p>
+<h5 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h5><p>名称：方法 = 1：n</p>
+<p>和C艹差不多</p>
+<pre><code class="java"></code></pre>
+<h5 id="抽象类-方法（和C-差不多）"><a href="#抽象类-方法（和C-差不多）" class="headerlink" title="抽象类/方法（和C++差不多）"></a>抽象类/方法（和C++差不多）</h5><p>n用关键字abstract来定义类或方法</p>
+<pre><code class="java">abstract class abstractClass{ …}
+abstract returnType abstractMethod([paramlist])</code></pre>
+<p>抽象类不能被实例化，必须被继承</p>
+<p>抽象方法只有方法的返回值、名称和参数列表，没有方法体，它必须在子类中具体实现该方法。</p>
+<p>如果一个类包含抽象方法，则必须被定义为抽象类，但抽象类不一定要包含抽象方法。</p>
+<h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><p>一种协议，声称需要完成什么方法。</p>
+<p>接口是抽象类的一种变体，用关键字interface来定义，形式为：</p>
+<pre><code class="java">[修饰符] interface 接口名
+{
+   //变量和方法声明
+}</code></pre>
+<p>接口中的所有方法都是抽象的（abstract可以不写），也没有方法体。</p>
+<p>接口中的所有数据都是静态常量（static,final可以不写）。</p>
+<pre><code class="java">//eg
+interface MyTest{
+    double i = 9.8;//等价于public static final double i=9.8
+    void show();//public abstract void show
+}</code></pre>
+<p>在类的声明中用implements来表示一个类实现自某个接口。</p>
+<pre><code class="java">class 类名 implements 接口名 [extends 类名] {
+    //类体
+}</code></pre>
+<p>一个类可以实现多个接口,在implements子句中用逗号分开。如：<strong>class</strong> D <strong>implements</strong> A,B,C</p>
+<p>实现某接口的子类必须重写该接口中所有方法。</p>
+<pre><code class="java">//eg
+interface MyTest{
+    double i = 3,j = 4;
+    void compute();
+}
+class Crect implements MyTest{
+    public void compute(){
+        System.out.println(&quot;面积为&quot;+i*j);
+    }
+}
+public class Test{
+    public static void main(String args[]){
+        Crect r = new Crect();
+        r.compute();
+    }
+}</code></pre>
+<h5 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h5><h6 id="1-成员内部类"><a href="#1-成员内部类" class="headerlink" title="1.成员内部类"></a>1.成员内部类</h6><p>成员内部类作为外部类的一个成员存在，与外部类的属性、方法并列。</p>
+<p>外部类可以访问内部类的私有成员，内部类也可以访问外部类的私有成员。</p>
+<p>创建内部类对象，使用</p>
+<pre><code class="java">outer.inner  obj = outerobj.new inner();</code></pre>
+<h6 id="2-局部内部类"><a href="#2-局部内部类" class="headerlink" title="2.局部内部类"></a>2.局部内部类</h6><p>方法中定义的内部类</p>
+<pre><code class="java">class Outer2{
+    public void doSomething(){
+        class inner2{
+            public void seeO(){}
+        }
+    }
+}</code></pre>
+<h6 id="3-静态内部类（嵌套类）s"><a href="#3-静态内部类（嵌套类）s" class="headerlink" title="3.静态内部类（嵌套类）s"></a>3.静态内部类（嵌套类）s</h6><h5 id="Lambda表达式⭐"><a href="#Lambda表达式⭐" class="headerlink" title="Lambda表达式⭐"></a>Lambda表达式⭐</h5><h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h5>
   </article>
-  
+
+  <div class="nexmoe-post-meta">
     
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>llxnb<br>
-<strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/19/java/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;19&#x2F;java&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;19&#x2F;java&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
 </div>
 
-
-  
-  <section class="nexmoe-comment">
+  <div class="nexmoe-post-footer">
     
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
-<script type="text/javascript">
-   (function(d, s) {
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>llxnb<br>
+    <strong>本文链接：</strong><a href="http://llx-08.github.io/2020/02/19/java/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;19&#x2F;java&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;02&#x2F;19&#x2F;java&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div id="lv-container" data-id="city" data-uid="LLXNB">
+    <script id="livere-comment-js">
+    (function(d, s) {
        var j, e = d.getElementsByTagName(s)[0];
-
        if (typeof LivereTower === 'function') { return; }
-
        j = d.createElement(s);
        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
        j.async = true;
-
        e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    })(document, 'script');
+    </script>
 </div>
-<!-- City版安装代码已完成 -->
-
-
-
-
-
-
-
-
-
-
-
 </section>
+  </div>
 </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1583646442681"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<!--<script src="/js/app.js?v=1584021611140"></script>-->
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
-<script type="text/javascript"> 
+<script> 
 !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
 </script>
 

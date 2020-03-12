@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-CN">
 
 <head>
   
+
   <title>标签：力扣 - LLXNB</title>
   <meta charset="UTF-8">
   <meta name="description" content="iWantMoney">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
 
@@ -20,16 +22,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="llxnb">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1583646442708">
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584021611168">-->
 
    
     <style>
@@ -45,13 +40,13 @@
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/saber.jpg)"></div>
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png"></a>
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
        </div>
     </div>
   </div>
@@ -59,15 +54,15 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="llxnb">
-            <img src="/img/head.png" alt="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>18</div>
+        <div><span>文章</span>22</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
-    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
         <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
@@ -83,10 +78,10 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于（客官来玩呀~）">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于（客官来玩呀~）
+                关于(客官来玩呀~
             </div>
         </a>
         
@@ -97,13 +92,13 @@
             </div>
         </a>
         
-    </ul>
+    </div>
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://www.google.com/search?q=llx-08.github.io" onsubmit="return search();">
-            <input id="search_value" name="q" type="search" placeholder="搜索">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
 </div>
@@ -115,10 +110,6 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'Steam:llxnb'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
-        </a><a class="mdui-ripple" href="/null" target="_blank" mdui-tooltip="{content: 'QQ:2596671364'}" style="color: ;background-color: ;">
-            <i class="nexmoefont icon-unorderedlist"></i>
         </a>
     </div>
 </div>
@@ -156,52 +147,80 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-archives">
-    <div class="nexmoe-post">
-        <a href="/tags/%E5%8A%9B%E6%89%A3/index.html">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="/img/saber.jpg" alt="">
-                
-                <h1></h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>0 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        
+<section class="nexmoe-archives">
+
+    <article>
+        
+
+        
+            <h2>2020</h2>
+            <ul>
             
+                <li><span>03-05</span><a href="/2020/03/05/%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/" >缺失的第一个正数</a></li>
             
-        </div>
-    </div>
+            </ul>
+        
+    </article>
 </section>
 
+<style>
+.nexmoe-archives article > *:first-child {
+    margin-top: 0;
+}
+.nexmoe-archives article > *:last-child {
+    margin-bottom: 0;
+}
+.nexmoe-archives ul {
+    list-style: none;
+    padding-left: 0!important;
+}
+.nexmoe-archives li {
+    position: relative;
+    padding: 10px 0;
+}
+.nexmoe-archives li::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #ff4e6a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 11px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    z-index: 100;
+    position: relative;
+}
+.nexmoe-archives li::after {
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: rgba(255, 78, 106, 0.2);
+    position: absolute;
+    left: 6px;
+    top: 20px;
+}
+.nexmoe-archives li:last-child:after {
+    display: none;
+}
+.nexmoe-archives span {
+    margin-right: 15px;
+}
+</style>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
- 
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script src="/js/app.js?v=1583646442710"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<!--<script src="/js/app.js?v=1584021611169"></script>-->
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
-<script type="text/javascript"> 
+<script> 
 !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
 </script>
 
