@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1584181540529">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584333501988">-->
 
    
     <style>
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>23</div>
+        <div><span>文章</span>25</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
@@ -124,7 +124,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 15px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 10px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 17.5px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12.5px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -134,7 +134,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/9999/09/">九月 9999</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
     </div>
   </div>
 
@@ -178,13 +178,12 @@
 
   <article>
     <h1 id="xpath笔记"><a href="#xpath笔记" class="headerlink" title="xpath笔记"></a>xpath笔记</h1><a id="more"></a>
-
 <p>用于解析XML的语言，学爬虫的时候看了一下，记下来怕忘了。</p>
 <p>/  直接子集</p>
 <p>// 该标签下的任何子集</p>
 <p>@ 访问属性</p>
 <p>eg:参考<a href="https://www.jianshu.com/p/b80e9cd81d7a" target="_blank" rel="noopener">https://www.jianshu.com/p/b80e9cd81d7a</a></p>
-<pre><code class="python">#coding=utf-8
+<pre><code class="lang-python">#coding=utf-8
 
 from lxml import etree
 
@@ -223,15 +222,16 @@ for href in hrefs:
     print href.attrib
 </code></pre>
 <p>结果：选取了所有的a标签</p>
-<pre><code class="python">{‘href’: ‘http://www.cydf.org.cn/‘, ‘target’: ‘_blank’, ‘rel’: ‘nofollow’} 
+<pre><code class="lang-python">{‘href’: ‘http://www.cydf.org.cn/‘, ‘target’: ‘_blank’, ‘rel’: ‘nofollow’} 
 {‘href’: ‘http://www.4399.com/flash/32979.htm‘, ‘target’: ‘_blank’} 
 {‘href’: ‘http://www.4399.com/flash/35538.htm‘, ‘target’: ‘_blank’} 
 {‘href’: ‘http://game.3533.com/game/‘, ‘target’: ‘_blank’} 
 {‘href’: ‘http://game.3533.com/tupian/‘, ‘target’: ‘_blank’} 
 {‘href’: ‘http://www.4399.com/‘, ‘target’: ‘_blank’} 
-{‘href’: ‘http://www.91wan.com/‘, ‘target’: ‘_blank’}</code></pre>
+{‘href’: ‘http://www.91wan.com/‘, ‘target’: ‘_blank’}
+</code></pre>
 <p>另外一个示例：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 
 &lt;bookstore&gt;
 
@@ -245,7 +245,9 @@ for href in hrefs:
   &lt;price&gt;39.95&lt;/price&gt;
 &lt;/book&gt;
 
-&lt;/bookstore&gt;</code></pre>
+&lt;/bookstore&gt;
+</code></pre>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -253,7 +255,8 @@ for href in hrefs:
 <th>结果</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>/bookstore/book[1]</td>
 <td>选取属于 bookstore 子元素的第一个 book 元素。</td>
 </tr>
@@ -285,71 +288,88 @@ for href in hrefs:
 <td>/bookstore/book[price&gt;35.00]/title</td>
 <td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>XPath 通配符可用来选取未知的 XML 元素。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">通配符</th>
-<th align="left">描述</th>
+<th style="text-align:left">通配符</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">*</td>
-<td align="left">匹配任何元素节点。</td>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">匹配任何元素节点。</td>
 </tr>
 <tr>
-<td align="left">@*</td>
-<td align="left">匹配任何属性节点。</td>
+<td style="text-align:left">@*</td>
+<td style="text-align:left">匹配任何属性节点。</td>
 </tr>
 <tr>
-<td align="left">node()</td>
-<td align="left">匹配任何类型的节点。</td>
+<td style="text-align:left">node()</td>
+<td style="text-align:left">匹配任何类型的节点。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>在下面的表格中，我们列出了一些路径表达式，以及这些表达式的结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">路径表达式</th>
-<th align="left">结果</th>
+<th style="text-align:left">路径表达式</th>
+<th style="text-align:left">结果</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">/bookstore/*</td>
-<td align="left">选取 bookstore 元素的所有子元素。</td>
+<tbody>
+<tr>
+<td style="text-align:left">/bookstore/*</td>
+<td style="text-align:left">选取 bookstore 元素的所有子元素。</td>
 </tr>
 <tr>
-<td align="left">//*</td>
-<td align="left">选取文档中的所有元素。</td>
+<td style="text-align:left">//*</td>
+<td style="text-align:left">选取文档中的所有元素。</td>
 </tr>
 <tr>
-<td align="left">//title[@*]</td>
-<td align="left">选取所有带有属性的 title 元素。</td>
+<td style="text-align:left">//title[@*]</td>
+<td style="text-align:left">选取所有带有属性的 title 元素。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="选取若干路径"><a href="#选取若干路径" class="headerlink" title="选取若干路径"></a>选取若干路径</h2><p>通过在路径表达式中使用“|”运算符，您可以选取若干个路径。</p>
 <h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>在下面的表格中，我们列出了一些路径表达式，以及这些表达式的结果：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">路径表达式</th>
-<th align="left">结果</th>
+<th style="text-align:left">路径表达式</th>
+<th style="text-align:left">结果</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">//book/title | //book/price</td>
-<td align="left">选取 book 元素的所有 title 和 price 元素。</td>
+<tbody>
+<tr>
+<td style="text-align:left">//book/title \</td>
+<td style="text-align:left">//book/price</td>
+<td>选取 book 元素的所有 title 和 price 元素。</td>
 </tr>
 <tr>
-<td align="left">//title | //price</td>
-<td align="left">选取文档中的所有 title 和 price 元素。</td>
+<td style="text-align:left">//title \</td>
+<td style="text-align:left">//price</td>
+<td>选取文档中的所有 title 和 price 元素。</td>
 </tr>
 <tr>
-<td align="left">/bookstore/book/title | //price</td>
-<td align="left">选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。</td>
+<td style="text-align:left">/bookstore/book/title \</td>
+<td style="text-align:left">//price</td>
+<td>选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>来源：<a href="https://www.w3school.com.cn/xpath/xpath_syntax.asp" target="_blank" rel="noopener">https://www.w3school.com.cn/xpath/xpath_syntax.asp</a></p>
 <p>感觉跟sql语句里面select那些挺像的，还是蛮易懂的。</p>
 <p>轴就是表示父标签子标签的，感觉用处不大；运算符和基本的运算符也没有太大的差别。</p>
@@ -404,7 +424,7 @@ for href in hrefs:
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1584181540530"></script>-->
+<!--<script src="/js/app.js?v=1584333501989"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>

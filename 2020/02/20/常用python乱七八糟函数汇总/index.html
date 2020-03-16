@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1584181540523">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584333501981">-->
 
    
     <style>
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>23</div>
+        <div><span>文章</span>25</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
@@ -124,7 +124,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 15px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 10px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 17.5px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12.5px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -134,7 +134,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/9999/09/">九月 9999</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
     </div>
   </div>
 
@@ -180,8 +180,7 @@
     <p>人到中年记性差（x</p>
 <p>慢慢学慢慢记</p>
 <a id="more"></a>
-
-<h2 id="画图类（-和matlab简直如出一辙）"><a href="#画图类（-和matlab简直如出一辙）" class="headerlink" title="画图类（#和matlab简直如出一辙）"></a>画图类（#和matlab简直如出一辙）</h2><pre><code class="python">import matplotlib.pyplot as plt
+<h2 id="画图类（-和matlab简直如出一辙）"><a href="#画图类（-和matlab简直如出一辙）" class="headerlink" title="画图类（#和matlab简直如出一辙）"></a>画图类（#和matlab简直如出一辙）</h2><pre><code class="lang-python">import matplotlib.pyplot as plt
 import numpy as np
 
 data = np.linspace(-10, 10, data_size) # -10到10，分成data_size份
@@ -201,8 +200,9 @@ plt.subplot(222) # matlab里要加逗号作为分隔，分成2x2的子图，下�
 
 plt.xlim(1,1000) #设置x轴或者y轴刻度范围
 
-plt.show() # 写多了matlab老是忘了写这个还好奇为啥没图</code></pre>
-<h2 id="numpy类"><a href="#numpy类" class="headerlink" title="numpy类"></a>numpy类</h2><pre><code class="python">import numpy as np
+plt.show() # 写多了matlab老是忘了写这个还好奇为啥没图
+</code></pre>
+<h2 id="numpy类"><a href="#numpy类" class="headerlink" title="numpy类"></a>numpy类</h2><pre><code class="lang-python">import numpy as np
 
 #生成数据
 np.eye(n) #n阶单位矩阵
@@ -221,8 +221,9 @@ np.resize(shape)#对原值进行修改，返回none
 #计算数据
 np.gradient(x) #计算x中元素的梯度
 np.median(x) #x的中位数
-np.dot()#返回两个矩阵的点积</code></pre>
-<h2 id="机器学习类"><a href="#机器学习类" class="headerlink" title="机器学习类"></a>机器学习类</h2><h4 id="常用激活函数"><a href="#常用激活函数" class="headerlink" title="常用激活函数"></a>常用激活函数</h4><pre><code class="python"># keras初始化所有激活函数,activation:
+np.dot()#返回两个矩阵的点积
+</code></pre>
+<h2 id="机器学习类"><a href="#机器学习类" class="headerlink" title="机器学习类"></a>机器学习类</h2><h4 id="常用激活函数"><a href="#常用激活函数" class="headerlink" title="常用激活函数"></a>常用激活函数</h4><pre><code class="lang-python"># keras初始化所有激活函数,activation:
 # keras\activations.py
 # keras\backend\cntk_backend.py
 # import cntk as C
@@ -259,8 +260,9 @@ np.dot()#返回两个矩阵的点积</code></pre>
 #     x = C.clip(x, 0.0, 1.0)
 #     return x
 # 10.linear
-#     return x</code></pre>
-<h4 id="神经网络层"><a href="#神经网络层" class="headerlink" title="神经网络层"></a>神经网络层</h4><h5 id="1-keras-Dense"><a href="#1-keras-Dense" class="headerlink" title="1. keras.Dense()"></a>1. keras.Dense()</h5><pre><code class="python">import keras
+#     return x
+</code></pre>
+<h4 id="神经网络层"><a href="#神经网络层" class="headerlink" title="神经网络层"></a>神经网络层</h4><h5 id="1-keras-Dense"><a href="#1-keras-Dense" class="headerlink" title="1. keras.Dense()"></a>1. keras.Dense()</h5><pre><code class="lang-python">import keras
 
 keras.layers.core.Dense(
 units, #代表该层的输出维度
@@ -276,7 +278,8 @@ bias_constraint=None #施加在偏置b上的约束项
 )
 
 # 所实现的运算是output = activation(dot(input, kernel)+bias)
-# model.add(Dense(units=64, activation=&#39;relu&#39;, input_dim=784))</code></pre>
+# model.add(Dense(units=64, activation=&#39;relu&#39;, input_dim=784))
+</code></pre>
 <h5 id="2-LSTM层"><a href="#2-LSTM层" class="headerlink" title="2. LSTM层"></a>2. LSTM层</h5><h6 id="3-Conv2D"><a href="#3-Conv2D" class="headerlink" title="3. Conv2D"></a>3. Conv2D</h6><h4 id="常用optimizer："><a href="#常用optimizer：" class="headerlink" title="常用optimizer："></a>常用optimizer：</h4><p>全局梯度下降：投入所有样本</p>
 <p>随机梯度下降（SGD）：每次只接受一个样本</p>
 <p>批次梯度下降：接受一部分样本。batch_size = 1:SGD</p>
@@ -336,7 +339,7 @@ bias_constraint=None #施加在偏置b上的约束项
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1584181540524"></script>-->
+<!--<script src="/js/app.js?v=1584333501982"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>

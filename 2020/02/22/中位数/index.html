@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1584181540520">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584333501977">-->
 
    
     <style>
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>23</div>
+        <div><span>文章</span>25</div>
         <div><span>标签</span>6</div>
         <div><span>分类</span>0</div>
     </div>
@@ -124,7 +124,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">标签云</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/oj/" style="font-size: 15px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 10px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+      <a href="/tags/oj/" style="font-size: 17.5px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12.5px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
     </div>
     
   </div>
@@ -134,7 +134,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/9999/09/">九月 9999</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
     </div>
   </div>
 
@@ -179,23 +179,24 @@
   <article>
     <p>oj</p>
 <a id="more"></a>
-
 <p>一个有 <em>n</em> 个整数的数组 <em>a</em>，<em>n</em>是一个奇数。</p>
 <p>每次可以选择数组里的一个元素 <em>a**i</em> 并把这个元素加上 1。</p>
 <p>在至多 <em>k</em> 次操作之后，数组的中位数最大能变成多少。</p>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>多组输入</p>
 <p>第一行两个整数 <em>n</em>,<em>k</em>(1≤<em>n</em>≤2×105,1≤<em>k</em>≤109)。</p>
-<p>第二行 <em>n</em> 和整数 <em>a</em>1,<em>a</em>2,……,<em>a*</em>n*。</p>
+<p>第二行 <em>n</em> 和整数 <em>a</em>1,<em>a</em>2,……,<em>a**n</em>。</p>
 <h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p><em>k</em> 次操作后数组的中位数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><pre><code class="in">3 2
-1 3 5</code></pre>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><pre><code class="out">5</code></pre>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><pre><code class="lang-in">3 2
+1 3 5
+</code></pre>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><pre><code class="lang-out">5
+</code></pre>
 <p>数学学得不好，想了好久好久好久啊。</p>
 <p>把输入的数组排个序，然后从中间开始，对每个元素和他下一个位置的元素求两者之间相差多少并存入数组。</p>
 <p>然后每一层就像mc里堆方块上楼一样，先把当前层到下一层填平，然后再把当前层和下一层到下下层填平…以此类推。</p>
 <p>填不满的就看能让现在所有的上升多少。</p>
 <p>其实我还没太懂怎么证明这种方法是对的，反正过了，tmd</p>
-<pre><code class="C++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-C++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 const int maxn=1000000;
 
@@ -238,7 +239,8 @@ int main()
         }
         cout&lt;&lt;ans&lt;&lt;endl;
     }
-}</code></pre>
+}
+</code></pre>
 
   </article>
 
@@ -290,7 +292,7 @@ int main()
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1584181540521"></script>-->
+<!--<script src="/js/app.js?v=1584333501979"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
