@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+
+  <title>Java(2) - LLXNB</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="I Want Money">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="java后半段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java(2)">
+<meta property="og:url" content="http://llx-08.github.io/2020/03/23/java-2/index.html">
+<meta property="og:site_name" content="LLXNB">
+<meta property="og:description" content="java后半段">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-23T02:46:27.000Z">
+<meta property="article:modified_time" content="2020-03-23T02:46:27.000Z">
+<meta property="article:author" content="llxnb">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1585114071067">-->
+
+   
+    <style>
+      .nexmoe-avatar img:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }	
+    </style>
+  
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/img/新/79358922_p0_master1200.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>31</div>
+        <div><span>标签</span>7</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于(客官来玩呀~
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/dad.html" title="父亲榜">
+            <i class="mdui-list-item-icon nexmoefont 老爷"></i>
+            <div class="mdui-list-item-content">
+                父亲榜
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11683709" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/oj/" style="font-size: 17.5px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 12.5px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 15px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">数学模型</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 17.5px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 llxnb
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 68.83333333333333%;"> 
+          <img data-src="/img/新/79358922_p0_master1200.jpg" data-sizes="auto" alt="Java(2)" class="lazyload">
+          <h1>Java(2)</h1>
+      </div>
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,081 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#异常处理"><span class="toc-number">1.</span> <span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#机制"><span class="toc-number">1.1.</span> <span class="toc-text">机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常类"><span class="toc-number">1.2.</span> <span class="toc-text">异常类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Throwable类"><span class="toc-number">1.2.1.</span> <span class="toc-text">Throwable类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#捕获异常"><span class="toc-number">1.3.</span> <span class="toc-text">捕获异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#声明抛弃异常"><span class="toc-number">1.4.</span> <span class="toc-text">声明抛弃异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抛出异常"><span class="toc-number">1.5.</span> <span class="toc-text">抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义异常类"><span class="toc-number">1.6.</span> <span class="toc-text">自定义异常类</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>java后半段</p>
+<a id="more"></a>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2><p>异常对象（exception object）——当一个方法在运行时出现异常事件时，该方法创建的对象，并将该对象抛给运行时系统</p>
+<p>异常对象存储了与错误有关的信息，包括错误类型以及异常事件出现时应用程序的状态和调用过程</p>
+<p>抛出异常（throwing an exception）——创建异常对象并抛给运行时系统的过程</p>
+<p>异常处理程序（exception handler）——能够处理异常的语句块</p>
+<p>捕获异常（catching exception）——当方法抛出异常后，运行时系统将沿着方法的调用栈逐层回溯，去查找能处理该异常的异常处理程序</p>
+<h2 id="异常类"><a href="#异常类" class="headerlink" title="异常类"></a>异常类</h2><p>Java采用面向对象的方法来处理错误，一个异常事件由一个异常对象来代表的。</p>
+<p>在Java类库的每个包中都定义了自己的异常类，所有这些类都直接或者间接地继承于Throwable类</p>
+<p>Java中的异常可以分为3类：</p>
+<p>–错误类（error）往往是由程序外部的运行环境出现错误引起的，因此程序通常不必去处理这类异常。</p>
+<p>–运行时异常类（runtime exception）运行时异常类继承于RuntimeException类，代表了Java虚拟机在运行时所生成的异常</p>
+<p>–非运行时异常类（checked exception）除了运行时异常以外的继承于Exception类的子类都统称为非运行时异常。对于这类异常，Java编译器要求程序必须捕获或者声明抛弃异常</p>
+<h3 id="Throwable类"><a href="#Throwable类" class="headerlink" title="Throwable类"></a>Throwable类</h3><p>–Throwable类是所有异常类的父类。</p>
+<p>–常用的方法有：</p>
+<p>•String getMessage()  返回该Throwable对象详细信息。 </p>
+<p>•void printStackTrace()  把该Throwable对象和它的跟踪情况打印到标准 错误流。</p>
+<p>•void printStackTrace(PrintStream s) 把该Throwable对象和它的跟踪情况打   印到指定的打印流。</p>
+<p>•void printStackTrace(PrintWriter s) 把该Throwable对象和它的跟踪情况打 印到指定的打印流。</p>
+<p>•String toString() 返回该Throwable对象的简短字符串描述。 </p>
+<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>try语句块</p>
+<p>–捕获异常的第一步是用try语句块选定捕获异常的范围。在try语句块中的语句在执行的过程中可能会抛出异常。</p>
+<p>catch语句块</p>
+<p>–每个try语句块可以伴随一个或者多个catch语句块，用于处理try代码块中产生的异常事件。</p>
+<p>–catch语句只需一个形式参数来指明它所能够捕获的异常类型，这个类必须是Throwable的子类。运行时系统通过参数值把抛出的异常对象传递给catch语句块。</p>
+<p>–捕获异常的顺序与catch语句的顺序有关。当捕获到一个异常时，剩下的catch语句就不再进行匹配。因此，在安排catch语句的顺序时，首先应该捕获最特殊的异常，然后再捕获一般化的异常。</p>
+<p>finally语句块</p>
+<p>–finally语句块在try语句块退出后总会被执行，这保证了不论try语句块中是否有异常发生，finally语句块都会被执行。</p>
+<p>–finally语句块在try-catch-finally结构中是可选的。finally语句块最大的作用是防止资源泄漏。</p>
+<pre><code class="lang-java">try{
+  ……
+}catch(exceptionType e1){
+  ……
+}catch(exceptionType e1){
+  ……
+}
+  ……
+}finally{
+  ……
+}
+</code></pre>
+<h2 id="声明抛弃异常"><a href="#声明抛弃异常" class="headerlink" title="声明抛弃异常"></a>声明抛弃异常</h2><p>如果在一个方法中发生了异常，但是该方法并不知道该如何处理该异常，此时该方法就应该声明抛弃异常，使得异常对象可以沿着方法的调用栈向后传播，直到有合适的方法捕获它为止。</p>
+<p>声明抛弃异常是在一个方法声明的throws子句中指明的。</p>
+<h2 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h2><p>抛出异常就是产生异常的过程</p>
+<p>首先要生成异常对象。异常对象或者由虚拟机生成，或者由某些类的实例生成，也可以在程序中生成</p>
+<p>在方法中，抛出异常对象是通过throw语句来实现的。可以抛出的异常对象必须是Throwable类或者子类的实例</p>
+<h2 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h2><p>自定义的异常类型必须是Throwable的直接或者间接子类。Java推荐用户的异常类型以Exception为直接父类。</p>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>llxnb<br>
+    <strong>本文链接：</strong><a href="http://llx-08.github.io/2020/03/23/java-2/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;03&#x2F;23&#x2F;java-2&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;03&#x2F;23&#x2F;java-2&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+    
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+    
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1585114071070"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+ 
+<script> 
+!function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+</script>
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
