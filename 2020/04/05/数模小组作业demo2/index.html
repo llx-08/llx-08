@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+
+  <title>新冠病毒确诊感染者数量预测模型 - LLXNB</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="I Want Money">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="新冠病毒确诊感染者数量预测数模作业，之前写的才发上来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新冠病毒确诊感染者数量预测模型">
+<meta property="og:url" content="http://llx-08.github.io/2020/04/05/%E6%95%B0%E6%A8%A1%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9Ademo2/index.html">
+<meta property="og:site_name" content="LLXNB">
+<meta property="og:description" content="新冠病毒确诊感染者数量预测数模作业，之前写的才发上来">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/llxpo/Desktop/SEIRdemo.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/SEIR.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/hanwen1.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/hanwen2.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/53%E4%B8%8D%E9%87%87%E5%8F%96.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/53+%E6%80%BB%E5%9B%BE.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/hhhh.png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/Spaintest%20(2).png">
+<meta property="og:image" content="http://llx-08.github.io/img/%E6%95%B0%E6%A8%A1%E6%96%B0%E5%86%A0%E4%BD%9C%E4%B8%9A/Spain.png">
+<meta property="article:published_time" content="2020-04-05T10:04:28.000Z">
+<meta property="article:modified_time" content="2020-04-05T10:04:28.000Z">
+<meta property="article:author" content="llxnb">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/llxpo/Desktop/SEIRdemo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1586098051306">-->
+
+   
+    <style>
+      .nexmoe-avatar img:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }	
+    </style>
+  
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/img/新/79358922_p0_master1200.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="llxnb" class="mdui-btn mdui-btn-icon"><img src="/img/head.png" alt="llxnb"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="llxnb">
+            <img src="/img/head.png" alt="llxnb" alt="llxnb">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>32</div>
+        <div><span>标签</span>7</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于(客官来玩呀~">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于(客官来玩呀~
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/dad.html" title="父亲榜">
+            <i class="mdui-list-item-icon nexmoefont 老爷"></i>
+            <div class="mdui-list-item-content">
+                父亲榜
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/11683709" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/llx-08" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/oj/" style="font-size: 17.5px;">oj</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 12.5px;">力扣</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 15px;">备忘录</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">学习</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">数学模型</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 17.5px;">日常</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 llxnb
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 0.7464%;"> 
+          <img data-src="/img/ipad/IMG_0247(20191222-202652).JPG" data-sizes="auto" alt="新冠病毒确诊感染者数量预测模型" class="lazyload">
+          <h1>新冠病毒确诊感染者数量预测模型</h1>
+      </div>
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年04月05日</a>
+    <a><i class="nexmoefont icon-areachart"></i>7,732 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 31 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新冠病毒确诊感染者数量预测"><span class="toc-number">1.</span> <span class="toc-text">新冠病毒确诊感染者数量预测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、问题重述和符号说明"><span class="toc-number">1.2.</span> <span class="toc-text">一、问题重述和符号说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-问题重述"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.1 问题重述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-符号说明"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">1.2 符号说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、模型假设"><span class="toc-number">1.3.</span> <span class="toc-text">二、模型假设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模型假设"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">模型假设</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、问题分析与模型建立"><span class="toc-number">1.4.</span> <span class="toc-text">三、问题分析与模型建立</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-差分方程模型"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">3.1 差分方程模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-欧拉数值方法模型"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">3.2 欧拉数值方法模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、模型求解与结果分析"><span class="toc-number">1.5.</span> <span class="toc-text">四、模型求解与结果分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-差分方程模型求解"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">4.1 差分方程模型求解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-欧拉数值方法模型求解"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">4.2 欧拉数值方法模型求解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#4-2-1-对参数-lambda-的分析"><span class="toc-number">1.5.0.2.0.1.</span> <span class="toc-text">4.2.1 对参数$\lambda$的分析</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、模型评价，改进与推广"><span class="toc-number">1.6.</span> <span class="toc-text">五、模型评价，改进与推广</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-模型评价-amp-改进"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">5.1 模型评价&amp;改进</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5-1-1-差分方程模型"><span class="toc-number">1.6.0.1.1.</span> <span class="toc-text">5.1.1 差分方程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#优点"><span class="toc-number">1.6.0.1.1.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#不足"><span class="toc-number">1.6.0.1.1.2.</span> <span class="toc-text">不足</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-1-2欧拉数值方法模型"><span class="toc-number">1.6.0.1.2.</span> <span class="toc-text">5.1.2欧拉数值方法模型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#优点-1"><span class="toc-number">1.6.0.1.2.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#缺点"><span class="toc-number">1.6.0.1.2.2.</span> <span class="toc-text">缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-模型推广"><span class="toc-number">1.6.0.2.</span> <span class="toc-text">5.2 模型推广</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、参考文献"><span class="toc-number">1.7.</span> <span class="toc-text">六、参考文献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、附录"><span class="toc-number">1.8.</span> <span class="toc-text">七、附录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-差分方程法"><span class="toc-number">1.8.0.1.</span> <span class="toc-text">7.1 差分方程法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-欧拉数值积分法"><span class="toc-number">1.8.0.2.</span> <span class="toc-text">7.2 欧拉数值积分法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-计算死亡率-治愈率："><span class="toc-number">1.8.0.3.</span> <span class="toc-text">7.3 计算死亡率&#x2F;治愈率：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-推广——西班牙疫情数据拟合"><span class="toc-number">1.8.0.4.</span> <span class="toc-text">7.4 推广——西班牙疫情数据拟合</span></a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <h1 id="新冠病毒确诊感染者数量预测"><a href="#新冠病毒确诊感染者数量预测" class="headerlink" title="新冠病毒确诊感染者数量预测"></a>新冠病毒确诊感染者数量预测</h1><p>数模作业，之前写的才发上来</p>
+<a id="more"></a>
+<hr>
+<p>​                                                                             <strong>小组成员 ： CSH,DHW,LLX</strong></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>​    自从2020年1月以来，新冠病毒在世界各地大肆传播，其极高的传播率与严重的感染后果已经对世界各地人类的生命健康造成了极大的威胁也对经济发展造成了不可估量的影响，齐心协力共同抗击疫情是目前所有国家的共识。</p>
+<p>​    已有许多学者与网友在现有流行病学资料和传染病模型的基础之上，大致估计了COVID-19 的基本的传播情况，并且预测了疫情的最高点感染人数及其时间。对于传染病的防控而言，较为准确地预测某地区未来30天内的确诊病人数量，拉响警钟，让民众更加重视此次传染病疫情，能够从根本上减弱病毒的传播，同时也为该地区医疗机构的医疗物资准备与病人收治策略的制定提供更好的导向。</p>
+<p>​    本文选取了欧洲疫情目前最为严重的国家意大利进行分析，选取从2月15号开始的接近一个月内的疫情数据（确诊，治愈，死亡人数）作为基本数据$^{[1][2]}$，再在基本传染病模型SEIR的基础之上，结合对于本次疫情的理解与该地区的防疫政策与实际情况，对模型进行改进并且估计模型中的参数，根据假设的模型与获取的实际疫情数据进行比对，在拟合情况较好的情况下进而对该地区接下来一个月以内的疫情发展状况做出大致的预测。</p>
+<p><strong>关键字</strong>：<strong>SEIR模型，传播动力学，差分方程，欧拉数值积分，Italy，covid-19</strong></p>
+<h2 id="一、问题重述和符号说明"><a href="#一、问题重述和符号说明" class="headerlink" title="一、问题重述和符号说明"></a>一、问题重述和符号说明</h2><h4 id="1-1-问题重述"><a href="#1-1-问题重述" class="headerlink" title="1.1 问题重述"></a>1.1 问题重述</h4><p>​    新冠肺炎病毒已经在全世界蔓延，而在一些国家和地区尤为严重，造成了大量人群的感染和死亡。意大利就是其中之一。本文通过对现有数据进行分析，拟合，在SEIR模型的基础上进行改进，分别建立了差分方程模型和改进的欧拉数值积分迭代模型，用以预测未来的确诊病人数量，以及死亡数等一系列的数据。</p>
+<h4 id="1-2-符号说明"><a href="#1-2-符号说明" class="headerlink" title="1.2 符号说明"></a>1.2 符号说明</h4><p>$S(t)$: t时刻易感人群（健康人群）的数量</p>
+<p>$S_q(t)$: t时刻由于接触了感染者/潜伏者的而需要进行隔离的易感人群，实际并未感染病毒</p>
+<p>$E(t)$: t时刻未隔离的潜伏者（感染病毒但未表现症状）数量</p>
+<p>$E_q(t)$: t时刻隔离的潜伏者的数量，与$S_q(t)$类似，接触了感染者/潜伏者但是染上了病毒</p>
+<p>$I(t)$: t时刻症状爆发且未送往医院治疗隔离的感染者的数量</p>
+<p>$Hos(t)$: t时刻在医院治疗隔离的感染者的数量</p>
+<p>$R(t)$: t时刻在医院治愈的感染者的总数量</p>
+<p>$D(t)$: t时刻死亡的感染者的总数量</p>
+<p>$\lambda$: 每位感染者/潜伏者每日接触健康人数量</p>
+<p>$\alpha$: 感染者成功传染病毒概率</p>
+<p>$\delta_{IO}$: 病毒在未隔离的潜伏者身上向感染者转化的转化率</p>
+<p>$\delta_{q}$: 病毒在隔离的潜伏者身上向感染者转化的转化率</p>
+<p>$\sigma$: 发病频率 ($\frac{1}{病毒潜伏周期}$)</p>
+<p>$\beta$: 感染者的死亡率</p>
+<p> $q$: 易感人群和潜伏者的隔离概率，由于在病毒过了潜伏期之前无法判断谁感染了病毒，因此这两类人是同一隔离的，也共用同一个隔离率</p>
+<p>$\gamma_I$: 未隔离治疗感染者的恢复率</p>
+<p>$\gamma_H$: 隔离治疗的感染者的恢复率</p>
+<p>$\theta$: 潜伏者相对于感染者传染病毒的能力系数 </p>
+<p>$k$: 隔离解除频率，在本次分析中隔离期约为两周，解除频率即为$\frac {1}{14}$</p>
+<p>$R_0 $: 在差分方程模型中，表示潜伏者每日平均接触人数</p>
+<p>$R_2 $:  在差分方程模型中，表示感染者每日平均接触人数</p>
+<h2 id="二、模型假设"><a href="#二、模型假设" class="headerlink" title="二、模型假设"></a>二、模型假设</h2><h4 id="模型假设"><a href="#模型假设" class="headerlink" title="模型假设"></a>模型假设</h4><ol>
+<li><p>假设某地区人口的进出流动，人口出生死亡相对稳定，人口变化可以忽略不计</p>
+</li>
+<li><p>由于全世界受冠状病毒影响较严重的地区、国家基本处于北半球中纬度部分，因此假设新型冠状病毒死亡率在各个地区均相同</p>
+</li>
+<li><p>感染者在实行隔离政策前后每天接触的有效人数均为常数，病毒的感染能力也为常数</p>
+</li>
+<li><p>只考虑由新冠肺炎引起的人口死亡，其他疾病或者事故假设不出现在模型中。</p>
+</li>
+<li><p>病毒只存在人传人的传染方式，无法从野生动物或其他特殊途径传染</p>
+</li>
+<li><p>假定康复者拥有病毒的抗体，在疫情期间内不会重复感染。</p>
+</li>
+</ol>
+<div style="page-break-after:always;"></div>
+
+<h2 id="三、问题分析与模型建立"><a href="#三、问题分析与模型建立" class="headerlink" title="三、问题分析与模型建立"></a>三、问题分析与模型建立</h2><p>​    求解传染病问题的模型可以选择的有很多种，“如常微分方程模型、偏微分方程模型、差分递推模型、Bezier曲线模型、二阶Logistic回归模型和Monte Carlo方法。”$^{[3]}$ 最初我们准备使用经典的SEIR模型，建立微分方程组并用龙格-库塔算法求其数值解，但是调整了许多参数后，模型的数据始终与实际数据有出入，我们便换用了差分方程模型与欧拉数值方法模型。</p>
+<h4 id="3-1-差分方程模型"><a href="#3-1-差分方程模型" class="headerlink" title="3.1 差分方程模型"></a>3.1 差分方程模型</h4><p>​    经典SEIR模型的转化流程不包括下面四个模块，仅考虑易感人群（Susceptible），潜伏者（Exposed），感染者（Infected）和治愈者（Recovered）的转化$^{[4]}$。考虑到病毒具有潜伏期，且在潜伏期具有一定的感染能力，在此基础上选择传染病模型中的SEIR模型并对其做出一定的修正，使模型契合本次实验。</p>
+<p>本次模型大致流程图如下：</p>
+<p><img data-sizes="auto" data-src="C:\Users\llxpo\Desktop\SEIRdemo.png" alt="SEIRdemo" class="lazyload"></p>
+<p>​    易感人群S会被潜伏者E和感染者I传染，易感人群被传染后会转化为潜伏者。潜伏者在经过潜伏期过后会转化为感染者表现出病症，部分感染者会因治疗效果不佳而死亡，另一部分康复者被治愈从而转化为康复者。</p>
+<p>​    下面基于本次实验构建修正后的SEIR传播动力学微分方程组：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+  \frac{dS}{dt} & = -(R_0\times E+R_2\times I)\times\alpha\times \frac SN
+\\\frac{dE}{dt} & =  (R_0\times E+R_2\times I)\times\alpha\times \frac SN-\sigma \times E 
+\\\frac{dI}{dt} & = \sigma \times E - (d + \mu)\times I
+\\\frac{dR}{dt} & = \mu \times I
+\\\frac{dD}{dt} & = d\times I
+\end{aligned}
+\right.</script><p>​    传染概率为$\alpha $，表示接触后有$\alpha $的概率感染病毒，在此假设潜伏者和感染者的传染能力相同。假定潜伏者感染能力没有感染者那么强，设置参数$\theta$表示潜伏者感染能力是感染者的多少倍。N为总人数，$\frac S N$表示易感人群在总人数中的比例。</p>
+<p>​    $\sigma$表示潜伏者向感染者转化的频率，转化频率与潜伏期时长t成反比，本次疫情平均潜伏期约为7，则$\sigma$取值为$\frac 1 7$。d表示感染者每日死亡率，该数值为每日新增死亡病例与现有确诊病例的比值，在此假设死亡率恒定，对52天所有的日死亡率除去0人死亡的情况求平均为总死亡率。$^{[5]}$$u$表示治愈率，该数值为治愈病例与确诊病例的比值，计算方法与死亡率相同。在此假设治愈率也恒定。</p>
+<p>考虑到自变量日期为离散变量，而微分方程组无法求出解析解，故将上述微分方程组转化为差分方程组，每一天的数据由前一天更新来进行拟合$^{[6]}$：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\ S(t+1)&= S(t) -(R_0\times E(t)+R_2\times I(t))\times\alpha\times \frac {S(t)}N
+\\E(t+1)&= E(t) + (R_0\times E(t)+R_2\times I(t))\times\alpha\times \frac {S(t)}N - \sigma\times E(t)
+\\I(t+1)&= I(t) + \sigma\times E(t)-(d+\mu)\times I(t)
+\\R(t+1)&= R(t) + \mu\times I(t)
+\\D(t+1)&= D(t) + d\times I(t)
+\end{aligned}
+\right.</script><h4 id="3-2-欧拉数值方法模型"><a href="#3-2-欧拉数值方法模型" class="headerlink" title="3.2 欧拉数值方法模型"></a>3.2 欧拉数值方法模型</h4><p><img data-sizes="auto" data-src="/img/数模新冠作业/SEIR.png" alt="SEIR" class="lazyload"></p>
+<p>​    该模型在差分方程模型的基础上，修改并且细化成为适合于本次疫情的模型。</p>
+<p>​    在此基础上，通过政府实施的一系列目前对抗疫情的措施，我们添加了隔离的措施，具体为，当发现易感人群与感染者/潜伏者有过接触后，将其统一隔离，在这些人群中，有些感染了病毒，有些没感染病毒，但由于实行感染措施时并不知情，我们使用相同的隔离率$q$，表示接触过病人的易感人群被隔离的概率，同时分别设置参数$\lambda，\alpha$为感染者/潜伏着每天接触到的易感人群人数和使人感染病毒的概率，那么每天被感染的人数为$S(t)(\lambda \alpha + \lambda q(1-\alpha))(I(t)+\theta E(t))$。</p>
+<p>​    此时未感染病毒的隔离人群($S_q$)，在14天的隔离期之后不再被隔离，重新变为易感人群$S$，而被隔离且被感染的易感人群（$E_q $)，也将在转化为感染者之后逐渐送往医院进行隔离治疗，成为在医院治疗隔离的感染者（$Hos $）。</p>
+<p>​    除去被发现接触过感染者/潜伏着的易感人群之外，有一部分没有受到隔离的易感人群也感染了病毒（$E$），他们将会转化为不受隔离的感染者（$I$）。在这一部分人当中，考虑到有部分患者隐瞒实情不愿接受治疗，或是突发疾病，没来得及送往医院治疗，抑或是考虑到意大利的医疗系统无法容纳如此之多的病人，我们将不受隔离的感染者分为两批，有一批不接受治疗，一批接受治疗。在这里先假设由隔离的潜伏者（$E_q $）转化为的感染者与接受医疗的未隔离感染者使用同样的医疗，分在一批之中。这两批感染者的恢复率显然是不同的，有些个例在不经过医疗的情况下也能够恢复，我们设这样的概率为$\gamma_I$；在接受医疗后的恢复率设为$\gamma_H$，这些恢复的人群转化为$R$，那么每天$R$人群新增量为 $\gamma_II+\gamma_HHos(t)$。而有一部分人则会死亡，我们设置为$d$。</p>
+<p>​    根据该流程，我们建立微分方程模型：</p>
+<script type="math/tex; mode=display">
+\left\{
+ \begin{aligned}
+    \frac{dS}{dt} & =-S \times (λ  \times \alpha+\lambda \times q\times(1-\alpha))(I+\theta\times E) +k\times S_q
+ \\ \frac{dS_q}{dt}&= S\times \lambda\times q\times (1-\alpha)\times (I+\theta\times E)-k\times S_q
+ \\ \frac{dE}{dt} & = S \times \lambda \times (1-q)\times (I+\theta \times E)\times \alpha - \sigma\times E 
+ \\ \frac{dE_q}{dt}&= S\times \lambda\times q\times(I+\theta\times E)\times\alpha-\delta_q\times E_q
+ \\ \frac{dI}{dt} & = \sigma\times E - (\delta_I+d + \gamma_I) \times I 
+ \\ \frac{dHos}{dt}&= \delta_I\times I + \delta_q\times Eq - Hos\times(d + \gamma_H)
+ \\ \frac{dR}{dt} & = \gamma_I\times I+\gamma_H\times Hos
+ \\ \frac{dD}{dt} & = d \times (Hos+I)    
+ \end{aligned} \right.</script><p>​    同样，该模型也无法解出解析解，我们在差分方程的基础上，将迭代的步长由1天，缩小为更小的步长，使模型更加精确，曲线更平滑。由此建立欧拉数值方法模型并进行求解。</p>
+<div style="page-break-after:always;"></div>
+
+<h2 id="四、模型求解与结果分析"><a href="#四、模型求解与结果分析" class="headerlink" title="四、模型求解与结果分析"></a>四、模型求解与结果分析</h2><p>​    通过对数据的计算，死亡率初值确定为0.02409，康复率初值确定为0.02726。其他初始数据参考于全球冠状病毒肺炎累计数据$^{[]}$，以及2018年百度上意大利的总人口。这其中也包含一些没有明确标明，或是无法测量的值，我们对其进行了估计。</p>
+<p>$N$：60431283(2018年)，意大利总人口，</p>
+<p>$S(0)$: 60431280</p>
+<p>$E(0)$: 2 ，初始潜伏者的数量无法测量，假定有两人为潜伏者</p>
+<p>$I(0)$：1</p>
+<p>$D(0)$：0</p>
+<p>$R(0)$：0</p>
+<h4 id="4-1-差分方程模型求解"><a href="#4-1-差分方程模型求解" class="headerlink" title="4.1 差分方程模型求解"></a>4.1 差分方程模型求解</h4><p>​    由新闻得知中国对意大利的医疗援助在3.12号抵达，对应我们的第41组数据，因此在$t&gt; 41$之后，我们对$R_0$和$R_2$进行了修改，使其分别为原有的0.94倍和0.83倍。此外，我们将原有的康复率$\mu = 0.005$在41天后变为0.034，表示中国的医疗设施开始运作。</p>
+<p>​    经过MATLAB求解后，现有确诊人数及死亡人数和时间的关系图如下：</p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/hanwen1.png" alt="hanwen1" class="lazyload"></p>
+<p>​    数据从1.31号开始，以此作为坐标起点。曲线和点线分别为预测总感染者数量、总死亡数量图像与数据图像，取$R_0$为2.46，$R_2$为$R_0$的90%，死亡率$d$取0.026，得到图 <em>Future Prediction &amp; Data Comparation</em>结果。在90~100天总感染者数量基本确定，为16万左右，死亡人数约为33000人。损失函数计算出损失值分别为：</p>
+<script type="math/tex; mode=display">
+rate1 =   0.023689292303134
+\\rate2 =   0.069407794576846
+\\rate3 =   0.053011370337231</script><p>​    我们使用的数据为1.31~3.22号的数据，与这几天新增的现有数据对比每天数量差距约为1000左右，很好的拟合了当前疫情的情况。</p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/hanwen2.png" alt="hanwen2" class="lazyload"></p>
+<p>​    图<em>Future Epidemic Situation Prediction of covid-19</em>表示当前感染者数量的预测图象。可以看到，在60天左右达到峰值，后面逐渐减少，慢慢降为0 。</p>
+<h4 id="4-2-欧拉数值方法模型求解"><a href="#4-2-欧拉数值方法模型求解" class="headerlink" title="4.2 欧拉数值方法模型求解"></a>4.2 欧拉数值方法模型求解</h4><p>​    该模型采用欧拉数值方法进行求解，迭代步长为0.01天。$^{[7]}$</p>
+<p>​    该模型中新增的几个变量及其赋值说明：</p>
+<p>$S_q(0)$：0</p>
+<p>$E_q(0)$：0</p>
+<p>$Hos(0) : I(0) + E_q(0)$</p>
+<p>$\lambda$：初始按照新型冠状病毒的基本传染数设置为2.6，为了拟合曲线逐步调整为2.7</p>
+<p>$\gamma_H$ ：隔离感染者康复率，通过数据计算出初值，并在调整参数的过程中逐步调整为0.046</p>
+<p>$\gamma_I$ ：未隔离感染者的康复率，由于未经隔离治疗的感染者自我康复概率极低，我们设为0.008</p>
+<p>$k$  ：隔离解除率，隔离的周期为2周，即14天，那么隔离解除频率即为$\frac 1 {14}$</p>
+<p>$\delta_I$：将未隔离的感染者送往医院治疗的概率，考虑到中国在3.12日为意大利带去大批医疗物资，在3.12日后该概率我们设为原本的1.5倍。</p>
+<p>$\delta_q$ : 隔离的潜伏者转换为感染者送去医院的概率。我们考虑隔离者将优先得到治疗，因此该概率等同于病毒爆发的概率，也就是$\frac 1 {潜伏期}$。</p>
+<p>$d$：死亡率，逐渐调整参数为0.01759</p>
+<p>​    考虑到意大利在3.10号下令封城，我们在3.10号之后改变$\lambda$。不幸的是，保证与数据的拟合程度而调整$\lambda$为$\lambda ‘$之后，$\lambda’$仅为$\lambda$的95%，说明意大利宣布封城的政策基本是无效的。</p>
+<p>​    为了精确表明拟合出的曲线与原数据的差距，我们定义以下损失函数来评估模型：</p>
+<script type="math/tex; mode=display">
+\frac{\sqrt{\sum (data_{origin}-data_{predict})^2}} {\sum data_{origin}}</script><p><img data-sizes="auto" data-src="/img/数模新冠作业/53不采取.png" alt="53不采取" class="lazyload"></p>
+<p>​    按照图例，图<em>Prediction Figure by Model2</em>中的曲线分别为：新增感染人数，总治愈人数，现有医院隔离治疗感染者人数，总感染者人数，总死亡人数，现有感染者人数。data1~3分别是数据的总感染者人数，康复人数，死亡人数。</p>
+<p>​    最终总感染人数，总康复人数，总死亡人数三条曲线与原数据的损失百分比分别为：3.4921%，5.7984%，6.3314%，表明很好的拟合了当前的情况。而在这样的情况下意大利未来的总感染人数将呈现线性增长，死亡人数和康复人数也类似。</p>
+<p>​    这两种模型对于数据的拟合程度都非常高，却在后续出现了分歧。差分方程模型显示很快现有感染者数量就将达到顶峰，总感染人数曲线将放缓并停止增长。而欧拉数值方法模型则显示后续总感染者数量仍然不断增加。我们认为在调参的过程中，即使调整的变化非常小，在后续的图像上也可能会有决定性的作用，显然手动调整参数是不能调整出最优解的。对于第一个模型，它的框架结构较为简单，每一个参数的细微调整都对结构影响是巨大的，也许只是距离最优解很小的参数取值就可能会影响最终的收敛性。而对于第二个模型，它的结构较为复杂，即使有一些偏差也会分担给其他的函数，不会全部积压在总确诊人数上。因此我们认为在存在误差的的情况下，第二个模型会更加精确。</p>
+<h6 id="4-2-1-对参数-lambda-的分析"><a href="#4-2-1-对参数-lambda-的分析" class="headerlink" title="4.2.1 对参数$\lambda$的分析"></a>4.2.1 对参数$\lambda$的分析</h6><p>​    λ不同取值表明管制措施的不同程度，对于总确诊人数的收敛速度及最终人数有着一定程度的影响。</p>
+<p>​    如果保持当前的情况，意大利未来不容乐观。因此我们在第53天调整$\lambda $，观察有什么样的结果。</p>
+<p>​    我们将53天后的$\lambda$调整为0.1，表明意大利加大封禁力度，每个人几乎不接触他人。此时的未来走势图如下所示：</p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/53+总图.png" alt="53+总图" class="lazyload"></p>
+<p>​    我们更进一步，令λ分别取0.1，0.3，0.5、0.7，观察总确诊人数的变化情况：    </p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/hhhh.png" alt="hhhh" class="lazyload"></p>
+<p>​    蓝线、红线和橙线和紫线分别表示λ取0.1、0.3、0.5、0.7时的情况，可以看到λ越大最终确诊人数越大，并且彼此之间的差值也会越来越大，会逐渐多出约一万至四万人的感染人数，这表明管控措施力度对于总确诊人数有着较大的影响，力度越大最终确诊人数越少，反之则越多。从收敛速度看，λ约小，最终确诊人数的收敛速度越快，表明管控措施力度越大，疫情能越早控制。因此若想较快较好的把控疫情，必须加强管制措施。</p>
+<div style="page-break-after:always;"></div>
+
+<h2 id="五、模型评价，改进与推广"><a href="#五、模型评价，改进与推广" class="headerlink" title="五、模型评价，改进与推广"></a>五、模型评价，改进与推广</h2><h4 id="5-1-模型评价-amp-改进"><a href="#5-1-模型评价-amp-改进" class="headerlink" title="5.1 模型评价&amp;改进"></a>5.1 模型评价&amp;改进</h4><h5 id="5-1-1-差分方程模型"><a href="#5-1-1-差分方程模型" class="headerlink" title="5.1.1 差分方程模型"></a>5.1.1 差分方程模型</h5><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><p>​    本模型基于传染病SEIR模型并对其进行改进，设置潜伏期的传染行为，较好地模拟了本次疫情的传播，为问题的进一步解决建立了较为合理的基础；</p>
+<p>​    模型中考虑了实际情况中的管制措施造成的可能影响，使得模型更加契合实际情况，可行性进一步提高；</p>
+<p>​    考虑到日期是离散分布，本次解方程组利用的是差分迭代，更好地贴合实际；</p>
+<h6 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h6><p>​    未考虑到易感人群、潜伏者和感染者的隔离行为，在模型假设上有些理想化；</p>
+<p>参数设定上只考虑一般情况或普适情况，并未针对特殊情况做出优化；</p>
+<h5 id="5-1-2欧拉数值方法模型"><a href="#5-1-2欧拉数值方法模型" class="headerlink" title="5.1.2欧拉数值方法模型"></a>5.1.2欧拉数值方法模型</h5><h6 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h6><p>​    与差分方程模型采用相同的思想，即通过不断地迭代找到下一个点的值，与其不同的是，差分方程模型使用天数作为单位，而此模型细化了迭代的步长，使曲线更加平滑。此外，细化了传染病传播和应对的过程，较好的符合了现在的情况。</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>​    将流程分的的过于细致，过于理想化，如果意大利防疫政策有不同的地方则会带来很大的偏差。</p>
+<div style="page-break-after:always;"></div>
+
+<h4 id="5-2-模型推广"><a href="#5-2-模型推广" class="headerlink" title="5.2 模型推广"></a>5.2 模型推广</h4><p>​    在建立，修正并预测完意大利的疫情数据的模型之后，我们又选择了另一个疫情十分严重的欧洲国家西班牙过去50天的疫情数据，再结合实际情况将相关参数进行修改（比如西班牙的总人口、3月14日开始封城之后传染率会下降等等），然后运用我们所建立的预测模型进行预测，再导入实际数据，与实际图线进行比对。</p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/Spaintest (2).png" alt="Spaintest (2)" class="lazyload"></p>
+<p>​    使用差分方程模型预测时，如上图所示，即使调整了参数将损失率控制在10%以内，但是图像仍然不能很好的预测未来的情况，在100天甚至达到了$10^7$数量级，这显然是不能很好的预测未来情况的。</p>
+<p>​    使用欧拉数值方法模型预测时，在最开始的图像中，预测的死亡人数与治愈人数都比较吻合，但是在第35-42天处的实际总确诊人数的图线在预测总确诊人数的图线附近波动，42-50天处的实际总人数更是要比预测的总确诊人数稍高一些，对此我们将最初的参数做出了修改,将λ1修改为3.1后，3个损失比率分别为</p>
+<script type="math/tex; mode=display">
+rate1 =    0.033651692310457 
+
+\\rate2 =    0.080772480947560 
+
+\\rate3 =    0.085836857597966</script><p>​    图像如下：</p>
+<p><img data-sizes="auto" data-src="/img/数模新冠作业/Spain.png" alt="Spain" class="lazyload"></p>
+<p>​    可以看出预测模型的曲线与实际情况的曲线的吻合程度显著提高。根据该模型，我们预测西班牙的疫情会在第75天左右达到高峰，此后逐渐稳定，呈现线性增长。</p>
+<p>​    从图中可以看出我们的模型不仅适合意大利的情况，也可以较好地描述西班牙的疫情传播，对于不同的地区，只要根据实际情况对模型中的参数加以适当的改动，就可以用该模型来分析改地区的疫情传播情况。</p>
+<div style="page-break-after:always;"></div>
+
+<h2 id="六、参考文献"><a href="#六、参考文献" class="headerlink" title="六、参考文献"></a>六、参考文献</h2><p>[1] 百度疫情实时大数据报告（意大利）[EB/OL] <a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3&amp;city=%E6%84%8F%E5%A4%A7%E5%88%A9-%E6%84%8F%E5%A4%A7%E5%88%A9&amp;qq-pf-to=pcqq.group" target="_blank" rel="noopener">https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3&amp;city=%E6%84%8F%E5%A4%A7%E5%88%A9-%E6%84%8F%E5%A4%A7%E5%88%A9&amp;qq-pf-to=pcqq.group</a> </p>
+<p>[2] 国家卫健委全球新型冠状病毒确诊病例分布图 [EB/OL] <a href="http://2019ncov.chinacdc.cn/2019-nCoV/global.html" target="_blank" rel="noopener">http://2019ncov.chinacdc.cn/2019-nCoV/global.html</a> </p>
+<p>[3] 周义仓，唐云. SARS传播预测的数学模型 [N] 工程数学学报 2013.2</p>
+<p>[4]姜启源,谢金星,叶俊.数学模型 [M].北京:高等教育出版社,2003. </p>
+<p>[5] 李贝，徐海譞，郭佳佳. 考虑自愈的SARS传播模型 [N]  工程数学学报  2003.12</p>
+<p>[6] qwe14789cn. 在家宅着也能抵抗肺炎！玩一玩SEIR传染病模型 [EB/OL] <a href="https://zhuanlan.zhihu.com/p/104268573" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/104268573</a> ，2020.02.03</p>
+<p>[7] 曹盛力，冯沛华，时朋朋.  2019-nCoV新型冠状病毒肺炎SEIR传播动力学模型分析 [EB/OL] <a href="http://mp.163.com/v2/article/detail/F599C96G0516C52N.html" target="_blank" rel="noopener">http://mp.163.com/v2/article/detail/F599C96G0516C52N.html</a> ,  2020.02.13.</p>
+<div style="page-break-after:always;"></div>
+
+<h2 id="七、附录"><a href="#七、附录" class="headerlink" title="七、附录"></a>七、附录</h2><p>MATLAB源程序：</p>
+<h4 id="7-1-差分方程法"><a href="#7-1-差分方程法" class="headerlink" title="7.1 差分方程法"></a>7.1 差分方程法</h4><pre><code class="lang-python">clc,clear
+%% parameters definition &amp; assignment
+%潜伏者基本传染数
+R0=2.54; 
+
+%隔离患者基本传染数
+R2=R0*0.9; 
+
+%感染率
+c=0.1084; 
+
+%感染者恢复率
+u_I=0.05; 
+
+%死亡率
+d=0.026; 
+
+%潜伏向感染转化概率
+k=1/7; 
+
+%天数
+day=100;
+
+% [S E I R D];
+N=60431285;
+%意大利总人口60431283
+S(1)=60431283;  E(1)=2;  I(1)=1; R(1)=0;  D(1)=0;  I_T(1) = I(1);
+
+%% Loop for iteration
+for i=1:day
+    if(i &gt; 41)
+        R0=R0*0.94;
+        R2=R2*0.83;
+        u_I=0.1;
+
+    end
+     S(i+1)=S(i)-R0*c*S(i)*E(i)/N-R2*c*S(i)*I(i)/N;
+     E(i+1)=E(i)+R0*c*E(i)*S(i)/N+R2*c*S(i)*I(i)/N...
+         -k*E(i);
+     I(i+1)=I(i)+k*E(i)-(d+u_I)*I(i);
+     R(i+1)=R(i)+u_I*I(i);
+     D(i+1)=D(i)+I(i)*d;
+     I_T(i+1) = I_T(i)+k*E(i);
+end
+
+subplot(2,1,1)
+hold on
+
+plot(0:day,I_T)
+
+plot(0:day,D);
+
+xlabel(&#39;Days&#39;);
+ylabel(&#39;Numbers&#39;);
+title(&#39;Future Prediction &amp; Data Comparation&#39;);
+legend(&#39;Total Infected&#39;,&#39;Total Death&#39;,&#39;Location&#39;,&#39;best&#39;)
+subplot(2,1,2)
+hold on
+
+plot(0:day,I);
+plot(0:day,R);
+plot(0:day,E);
+
+xlabel(&#39;Days&#39;);
+ylabel(&#39;Numbers&#39;);
+title(&#39;Future Epidemic Situation Prediction of covid-19&#39;);
+
+legend( &#39;Hospitalized&#39;, &#39;Cured&#39;,&#39;Infected&#39;,&#39;Location&#39;,&#39;best&#39;)
+hold on
+
+%% raw data &amp; plot
+data=importdata(&#39;C:\Users\llxpo\Desktop\data.txt&#39;);
+
+data_Infected=data(:,2);
+
+data_death=data(:,4);
+
+day2 = 0:51;
+
+subplot(2,1,1)
+
+plot(day2,data_Infected,&#39;*&#39;);
+hold on
+
+plot(day2,data_death,&#39;*&#39;);
+hold on
+for i=1:52
+    L1(i)=(data_Infected(i)-I_T(i))^2;
+
+   % L2(i)=(data_Cured(i)-Cured(i))^2;
+
+    L3(i)=(data_death(i)-D(i))^2;
+end
+hold off
+%% Total Loss
+
+loss1=sqrt(sum(L1))
+
+%loss2=sqrt(sum(L2))
+
+loss3=sqrt(sum(L3))
+
+rate1 = loss1/sum(data_Infected)
+
+%rate2 = loss2/sum(data_Cured)
+
+rate3 = loss3/sum(data_death)
+</code></pre>
+<h4 id="7-2-欧拉数值积分法"><a href="#7-2-欧拉数值积分法" class="headerlink" title="7.2 欧拉数值积分法"></a>7.2 欧拉数值积分法</h4><p>注：data数据采用绝对路径，引用运行时请注意更改</p>
+<pre><code class="lang-python">clc,clear
+
+%% parameters definition &amp; assignment
+%每位患者每日接触健康人数量lam ；成功传染病毒概率 alpha
+lam1 = 2.7; alpha = 1.74e-9;
+
+%delta:q病毒在隔离潜伏者身上向感染者转化的转化率 I0,将未隔离的感染者送往医院治疗的概率
+delta_I0=0.13; delta_q=1/7;
+
+gama_I=0.008; gama_H=0.046;%感染者和隔离感染者的恢复率
+%gama_H=0.042
+q=10e-7; d=0.01759;% d：死亡率
+
+theta=0.9; k=1/14;%k:隔离解除率，theta：潜伏者相对于感染者的传染能力，1则相同
+
+T=100; t=0.01; %T：天数，t：积分步长
+N=T/t;
+
+%% function initialize
+
+S = 60431280; E = 2; I = 1; Sq = 0;
+
+I_total = 1; D = 0;
+
+Eq=0; Hos=I+Eq; R=0; sigma=1/7;%病毒潜伏期，约为7天
+
+res=[S E I Sq Eq Hos R I_total D];
+
+%% Loop for iteration
+for i=1:N
+
+    if (i*t)&gt;=53 %意大利3.10号正式封城，对应数据为第39组数据
+
+   %delta_I=delta_I0*1.5;
+   %lam = 0.1;
+
+    delta_I=delta_I0*1.5;
+    lam = lam1;
+
+    elseif (i*t) &lt;=53 &amp;&amp; (i*t)&gt;=41
+
+    delta_I=delta_I0*1.5;
+    lam = lam1;
+
+    elseif (i*t)&gt;=39 &amp;&amp; (i*t)&lt;=41
+
+    lam = lam1*0.95;
+    delta_I=delta_I0;
+
+    else
+
+    delta_I=delta_I0;
+    lam = lam1;
+
+    end
+
+%每天S人群的增量为当日解除隔离的Sq人数减被感染者和潜伏者感染的人数
+%再减去接触了感染者或潜伏者未患病但是也需要被隔离的S
+dS = -S * (lam*alpha + lam*q*(1-alpha)) * (I+theta*E) + k*Sq;
+%增加与感染者或潜伏者接触后未感染的人，减少隔离期结束的人
+dSq = S * lam * q * (1-alpha) * (I+theta*E) - k*Sq;
+%增加被感染且未被隔离的健康人,减去转化成感染者的潜伏者
+dE = S * lam * (1-q) * (I+theta*E) * alpha - sigma*E;
+%增加与感染者或潜伏者接触后感染且隔离的人，减少转化为隔离感染者的潜伏者
+dEq = S * lam * q * (I+theta*E) * alpha - delta_q*Eq;
+%增加潜伏者转化而成的感染者，减隔离的感染者和死亡治愈的感染者
+dI = sigma*E - (delta_I+d+gama_I)*I;
+%送去治疗的感染者加隔离的潜伏者，减死亡或者治愈的患者
+dHos = delta_I*I + delta_q*Eq - Hos*(d + gama_H);
+%治愈者，来自自愈的感染者和在医院治愈的感染者
+dR = gama_I*I+gama_H*Hos;
+%总感染人数，只增不减
+dI_total = sigma*E + delta_q*Eq;
+%总死亡人数，只增不减
+dDead = d*(Hos + I);
+
+
+%% Euler integration algorithm &amp; plot
+
+S = S+dS*t;
+Sq = Sq+dSq*t;
+
+E = E+dE*t;
+Eq = Eq+dEq*t;
+
+I = I+dI*t;
+Hos = Hos+dHos*t;
+
+R = R+dR*t;
+
+I_total = I_total + dI_total*t;
+
+D = D + dDead*t;
+
+res=[res; S E I Sq Eq Hos R I_total D];
+end
+
+Infected1(:,1)= round(res(1:1/t:size(res,1),3));
+Infected2(:,1)= round(res(1:1/t:size(res,1),6));
+
+Cured(:,1)=round(res(1:1/t:size(res,1),7));
+
+I_T(:,1) = round(res(1:1/t:size(res,1),8));
+
+Dead(:,1) = round(res(1:1/t:size(res,1),9));
+I_now = I_T - Cured - Dead;
+
+plot(0:T,[Infected1 Cured Infected2 I_T  Dead I_now])
+xlabel(&#39;Days&#39;);
+ylabel(&#39;Numbers&#39;);
+title(&#39;Prediction Figure by Model2’&#39;);
+legend(&#39;Infected&#39;, &#39;Cured&#39;, &#39;Hospitalized&#39;,&#39;Total Infected&#39;,&#39;Total Death&#39;,&#39;Infected Now&#39;,&#39;Location&#39;,&#39;best&#39;)
+
+%% raw data &amp; plot
+
+hold on
+data=importdata(&#39;C:\Users\llxpo\Desktop\data.TXT&#39;);
+data_Infected=data(:,2);
+%日期 总确诊 新增确诊 总死亡 新增死亡 总治愈 data
+data_Cured=data(:,6);
+data_Dead = data(:,4);
+
+for i=1:52
+    L1(i)=(data_Infected(i)-I_T(i))^2;
+    L2(i)=(data_Cured(i)-Cured(i))^2;
+    L3(i)=(data_Dead(i)-Dead(i))^2;
+end
+%Total Loss
+loss1=sqrt(sum(L1))
+loss2=sqrt(sum(L2))
+loss3=sqrt(sum(L3))
+
+rate1 = loss1/sum(data_Infected)
+rate2 = loss2/sum(data_Cured)
+rate3 = loss3/sum(data_Dead)
+
+
+plot([1:length(data_Infected)],[data_Infected],&#39;*&#39;);
+plot([1:length(data_Infected)],[data_Cured],&#39;*&#39;);
+plot([1:length(data_Infected)],[data_Dead],&#39;*&#39;);
+</code></pre>
+<h4 id="7-3-计算死亡率-治愈率："><a href="#7-3-计算死亡率-治愈率：" class="headerlink" title="7.3 计算死亡率/治愈率："></a>7.3 计算死亡率/治愈率：</h4><pre><code class="lang-matlab">a = importdata(&#39;C:\Users\llxpo\Desktop\data.txt&#39;);
+
+b = zeros(1,51);
+for i=2:52
+    b(1,i) = a(i,5) / a(i-1,2);
+    b1(1,i)= (a(i,6) -a(i-1,6))/a(i-1,2);
+end
+x = mean(b(1,24:52))*(52-24)/(52-24-4)
+x1 = mean(b1(1,24:52))*(52-24)/(52-24-4)
+</code></pre>
+<h4 id="7-4-推广——西班牙疫情数据拟合"><a href="#7-4-推广——西班牙疫情数据拟合" class="headerlink" title="7.4 推广——西班牙疫情数据拟合"></a>7.4 推广——西班牙疫情数据拟合</h4><pre><code class="lang-python">clc,clear
+
+%% parameters definition &amp; assignment
+%每位患者每日接触健康人数量lam ；成功传染病毒概率 alpha
+lam1 = 3.1; alpha = 1.74e-9;
+
+%delta:q病毒在隔离潜伏者身上向感染者转化的转化率 I0,将未隔离的感染者送往医院治疗的概率
+delta_I0=0.13; delta_q=1/7;
+
+gama_I=0.008; gama_H=0.055;%感染者和隔离感染者的恢复率
+%gama_H=0.042
+q=10e-7; d=0.013;% d：死亡率
+
+theta=0.9; k=1/14;%k:隔离解除率，theta：潜伏者相对于感染者的传染能力，1则相同
+
+T=100; t=0.01; %T：天数，t：积分步长
+N=T/t;
+
+%% function initialize
+%西班牙总人口46730000
+S = 46729990; E = 3; I = 1; Sq = 0;
+
+I_total = 1; D = 0;
+
+Eq=0; Hos=I+Eq; R=0; sigma=1/7;%病毒潜伏期，约为7天
+
+res=[S E I Sq Eq Hos R I_total D];
+
+%% Loop for iteration
+for i=1:N
+
+    if (i*t)&gt;=53 %西班牙3.14正式封城，对应数据为第39组数据
+
+    delta_I=delta_I0*1.5;
+    lam = lam1*0.95;
+
+    %elseif (i*t) &lt;=29 &amp;&amp; (i*t)&gt;=41
+
+    %delta_I=delta_I0*1.5;
+    %lam = lam1;
+
+    %elseif (i*t)&gt;=41 &amp;&amp; (i*t)&lt;=53
+
+    %lam = lam1*0.95;
+    %delta_I=delta_I0;
+
+    else
+    delta_I=delta_I0;
+    lam = lam1;
+
+    end
+
+%每天S人群的增量为当日解除隔离的Sq人数减被感染者和潜伏者感染的人数
+%再减去接触了感染者或潜伏者未患病但是也需要被隔离的S
+dS = -S * (lam*alpha + lam*q*(1-alpha)) * (I+theta*E) + k*Sq;
+%增加与感染者或潜伏者接触后未感染的人，减少隔离期结束的人
+dSq = S * lam * q * (1-alpha) * (I+theta*E) - k*Sq;
+%增加被感染且未被隔离的健康人,减去转化成感染者的潜伏者
+dE = S * lam * (1-q) * (I+theta*E) * alpha - sigma*E;
+%增加与感染者或潜伏者接触后感染且隔离的人，减少转化为隔离感染者的潜伏者
+dEq = S * lam * q * (I+theta*E) * alpha - delta_q*Eq;
+%增加潜伏者转化而成的感染者，减隔离的感染者和死亡治愈的感染者
+dI = sigma*E - (delta_I+d+gama_I)*I;
+%送去治疗的感染者加隔离的潜伏者，减死亡或者治愈的患者
+dHos = delta_I*I + delta_q*Eq - Hos*(d + gama_H);
+%治愈者，来自自愈的感染者和在医院治愈的感染者
+dR = gama_I*I+gama_H*Hos;
+%总感染人数，只增不减
+dI_total = sigma*E + delta_q*Eq;
+%总死亡人数，只增不减
+dDead = d*(Hos + I);
+
+
+%% Euler integration algorithm &amp; plot
+
+S = S+dS*t;
+Sq = Sq+dSq*t;
+
+E = E+dE*t;
+Eq = Eq+dEq*t;
+
+I = I+dI*t;
+Hos = Hos+dHos*t;
+
+R = R+dR*t;
+
+I_total = I_total + dI_total*t;
+
+D = D + dDead*t;
+
+res=[res; S E I Sq Eq Hos R I_total D];
+end
+
+Infected1(:,1)= round(res(1:1/t:size(res,1),3));
+Infected2(:,1)= round(res(1:1/t:size(res,1),6));
+
+Cured(:,1)=round(res(1:1/t:size(res,1),7));
+
+I_T(:,1) = round(res(1:1/t:size(res,1),8));
+
+Dead(:,1) = round(res(1:1/t:size(res,1),9));
+I_now = I_T - Cured - Dead;
+
+plot(0:T,[Infected1 Cured Infected2 I_T  Dead I_now])
+xlabel(&#39;Days&#39;);
+ylabel(&#39;Numbers&#39;);
+title(&#39;Future Epidemic Situation Prediction of covid-19&#39;);
+legend(&#39;Infected&#39;, &#39;Cured&#39;, &#39;Hospitalized&#39;,&#39;Total Infected&#39;,&#39;Total Death&#39;,&#39;Infected Now&#39;)
+
+%% raw data &amp; plot
+
+hold on
+data=importdata(&#39;C:\Users\llxpo\Desktop\data_Spain.txt&#39;);
+data_Infected=data(:,2);
+%日期 总确诊 新增确诊 总死亡 新增死亡 总治愈 data
+data_Cured=data(:,6);
+data_Dead = data(:,4);
+
+for i=1:57
+    L1(i)=(data_Infected(i)-I_T(i))^2;
+    L2(i)=(data_Cured(i)-Cured(i))^2;
+    L3(i)=(data_Dead(i)-Dead(i))^2;
+end
+%Total Loss
+loss1=sqrt(sum(L1))
+loss2=sqrt(sum(L2))
+loss3=sqrt(sum(L3))
+
+rate1 = loss1/sum(data_Infected)
+rate2 = loss2/sum(data_Cured)
+rate3 = loss3/sum(data_Dead)
+
+
+plot([1:length(data_Infected)],[data_Infected],&#39;*&#39;);
+plot([1:length(data_Infected)],[data_Cured],&#39;*&#39;);
+plot([1:length(data_Infected)],[data_Dead],&#39;*&#39;);
+</code></pre>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>llxnb<br>
+    <strong>本文链接：</strong><a href="http://llx-08.github.io/2020/04/05/%E6%95%B0%E6%A8%A1%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9Ademo2/" title="http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;04&#x2F;05&#x2F;%E6%95%B0%E6%A8%A1%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9Ademo2&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;llx-08.github.io&#x2F;2020&#x2F;04&#x2F;05&#x2F;%E6%95%B0%E6%A8%A1%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9Ademo2&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODg1MS8yNTM0NQ==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+    
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+    
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1586098051310"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+ 
+<script> 
+!function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+</script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
