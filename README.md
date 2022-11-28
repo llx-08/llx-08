@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @llx-08
-- 👀 I’m interested in how 2 find a job after graduation. TUT
-- 🌱 I’m currently learning Machine Learning Compilation
+- 👀 I’m interested in
+- 🌱 I’m currently learning Machine Learning Compilation/Model Deploy
 - 📫 How to reach me: linxuanli@tju.edu.cn
 
 <!---
