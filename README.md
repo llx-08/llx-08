@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @llx-08
 - 👀 I’m interested in
-- 🌱 I’m currently learning Machine Learning Compilation/Model Deploy
+- 🌱 I’m currently learning Machine Learning Compilation/AIsys
 - 📫 How to reach me: linxuanli@tju.edu.cn
 
 <!---
