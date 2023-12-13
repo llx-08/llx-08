@@ -7,6 +7,12 @@
 llx-08/llx-08 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+   <p align="left">
+      <a href="https://github.com/llx-08?tab=followers">
+         <img alt="followers" title="Follow me on Github" src="https://custom-icon-badges.demolab.com/github/followers/CYang828?color=236ad3&labelColor=1155ba&style=for-the-badge&logo=person-add&label=Follow&logoColor=white"/></a>
+      <a href="https://github.com/llx-08?tab=repositories&sort=stargazers">
+         <img alt="total stars" title="Total stars on GitHub" src="https://custom-icon-badges.demolab.com/github/stars/CYang828?color=55960c&style=for-the-badge&labelColor=488207&logo=star"/></a>
+   </p>
 
 
 ### GitHub Stats
@@ -17,10 +23,3 @@ You can click the Preview link to take a look at your changes.
   </a>
  </p>
  
-### Top Languages
-
-<p align="center">
-<a href = "https://github.com/CYang828">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=llx-08&layout=compact&title_color=ffc857&icon_color=8ac926&text_color=daf7dc&bg_color=151515&card_width=400">
-</a>
-</p>
