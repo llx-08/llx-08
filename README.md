@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @llx-08
 - 👀 I’m interested in LLMs inference.
-- 🌱 I’m currently learning Machine Learning Compilation/AIsys
+- 🌱 I’m currently learning Multi-modal LLM/LLMs inference optimization
 - 📫 How to reach me: linxuanli@tju.edu.cn
 
 <!---
